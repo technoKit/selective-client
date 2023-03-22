@@ -85,6 +85,11 @@ const Header = ({ transparentTop, transparentHeader, topSecondaryBg }) => {
                     <a>Projects</a>
                   </Link>
                 </li>
+                <li>
+                  <Link href="/contact">
+                    <a>contact us</a>
+                  </Link>
+                </li>
                 {/* <li>
                   <Link href="/events">
                     <a>Events</a>
@@ -115,10 +120,25 @@ const Header = ({ transparentTop, transparentHeader, topSecondaryBg }) => {
             </div>
             <div className="navbar-extra d-flex align-items-center">
               <Link href="/contact">
-                <a className="main-btn nav-btn d-none d-sm-inline-block">
-                  Contact Us <i className="far fa-arrow-right" />
+                <a
+                  className="main-btn nav-btn d-none d-sm-inline-block mr-2"
+                  style={{
+                    backgroundColor: "transparent",
+                    color: "black",
+                    border: "1px solid black",
+                    paddingRight: "19px",
+                    paddingLeft: "19px",
+                  }}
+                >
+                  Log in <i className="far fa-user" />
                 </a>
               </Link>
+              <Link href="/contact">
+                <a className="main-btn nav-btn d-none d-sm-inline-block ">
+                  Sign up <i className="far fa-arrow-right" />
+                </a>
+              </Link>
+
               <a href="#" className="nav-toggler">
                 <span />
               </a>
