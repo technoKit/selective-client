@@ -76,7 +76,7 @@ const Contact = () => {
                             className="main-btn"
                             onClick={handleSubmit(onSubmit)}
                           >
-                            Send Us Message <i className="far fa-arrow-right" />
+                            Log in <i className="far fa-arrow-right" />
                           </button>
                         </div>
                       </div>

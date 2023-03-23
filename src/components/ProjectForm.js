@@ -95,11 +95,11 @@ function ProjectForm(props) {
               {!success ? (
                 <div className="form-field">
                   <button className="main-btn">
-                    Send Us Message <i className="far fa-arrow-right" />
+                    Apply for shares <i className="far fa-arrow-right" />
                   </button>
                 </div>
               ) : (
-                <div>message sent</div>
+                <div>Application sent successfully </div>
               )}
             </div>
             <div className="col-12">
