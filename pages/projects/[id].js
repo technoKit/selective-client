@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import SimpleMap from "../../src/components/SimpleMap";
 import ImageGallery from "react-image-gallery";
 import ProjectForm from "../../src/components/ProjectForm";
+import { useAuth } from "../../src/contexts/auth";
 
 const ProjectDetails = (props) => {
   const router = useRouter();
@@ -22,6 +23,8 @@ const ProjectDetails = (props) => {
       setProject(project);
     }
   }, [id]);
+
+  const { login, loginError, loginLoading, user, isAuthenticated } = useAuth();
 
   //gallery images states logic
   const [images, setImages] = useState([]);
@@ -205,7 +208,63 @@ const ProjectDetails = (props) => {
                           )}
                         </div>
                       </div>
-                      {project && <ProjectForm project={project} />}
+                      {isAuthenticated && user?.canBuy && (
+                        <ProjectForm project={project} />
+                      )}
+                      {isAuthenticated && !user?.canBuy && (
+                        <div style={{ marginTop: "100px" }}>
+                          <div className="contact-form">
+                            <h3 className="form-title">
+                              You are on our waiting list
+                            </h3>
+                            <h6
+                              style={{
+                                marginBottom: "50px",
+                                marginTop: "-20px",
+                              }}
+                            >
+                              Thank you for joining our waiting list. We will
+                              inform you shortly once you have access to buy
+                              shares.
+                            </h6>
+                          </div>
+                        </div>
+                      )}
+                      {!isAuthenticated && (
+                        <div style={{ marginTop: "100px" }}>
+                          <div className="contact-form">
+                            <h3 className="form-title">
+                              Sign up to be able to buy shares
+                            </h3>
+                            <h6
+                              style={{
+                                marginBottom: "50px",
+                                marginTop: "-20px",
+                              }}
+                            >
+                              By logging in you will join our waiting list for
+                              active users. We will notify you once you can buy
+                              shares.
+                            </h6>
+                            <div className="navbar-extra d-flex align-items-center">
+                              <Link href="/login">
+                                <a
+                                  className="main-btn nav-btn d-none d-sm-inline-block mr-2"
+                                  style={{
+                                    backgroundColor: "transparent",
+                                    color: "black",
+                                    border: "1px solid black",
+                                    paddingRight: "19px",
+                                    paddingLeft: "19px",
+                                  }}
+                                >
+                                  Log in <i className="far fa-user" />
+                                </a>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                     <div className="tab-pane fade" id="update" role="tabpanel">
                       Update

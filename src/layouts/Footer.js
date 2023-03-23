@@ -71,13 +71,13 @@ const Footer = ({ footerSolidBg }) => {
                   <h4 className="widget-title">Our Projects</h4>
                   <ul>
                     <li>
-                      <Link href="/project-1">Medical &amp; Health</Link>
+                      <Link href="/projects">Medical &amp; Health</Link>
                     </li>
                     <li>
-                      <Link href="/project-2">Educations</Link>
+                      <Link href="/projects">Educations</Link>
                     </li>
                     <li>
-                      <Link href="/project-1">Technology</Link>
+                      <Link href="/projects">Technology</Link>
                     </li>
                     <li>
                       <Link href="/project-3">Web Development</Link>
@@ -86,7 +86,7 @@ const Footer = ({ footerSolidBg }) => {
                       <Link href="/project-2">Food &amp; Clothes</Link>
                     </li>
                     <li>
-                      <Link href="/project-1">Video &amp; Movies</Link>
+                      <Link href="/projects">Video &amp; Movies</Link>
                     </li>
                   </ul>
                 </div>

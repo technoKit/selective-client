@@ -23,7 +23,7 @@ const Index = (props) => {
               </div>
               <div className="author">
                 <img src="assets/img/location.png" alt="Thumb" />
-                <Link href="/project-1">{project?.attributes?.location}</Link>
+                <Link href="/projects">{project?.attributes?.location}</Link>
               </div>
               <h5 className="title">
                 <Link href="/project-details">
@@ -83,7 +83,7 @@ const Index = (props) => {
                 <h1 className="title wow fadeInUp" data-wow-delay="0.4s">
                   Selective Capital
                 </h1>
-                <Link href="/project-1">
+                <Link href="/projects">
                   <a className="main-btn wow fadeInUp" data-wow-delay="0.5s">
                     Explore Projects <i className="far fa-arrow-right" />
                   </a>

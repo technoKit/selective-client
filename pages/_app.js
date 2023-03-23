@@ -2,6 +2,8 @@ import { Fragment, useEffect, useState } from "react";
 import Preloader from "../src/layouts/Preloader";
 import "../styles/globals.css";
 import axios from "axios";
+import { AuthProvider } from "../src/contexts/auth";
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 function MyApp({ Component, pageProps }) {
   const baseURL = `${process.env.NEXT_PUBLIC_BASE_URL}/projects?populate=*`;
@@ -27,14 +29,17 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <Fragment>
-      {preloader && <Preloader />}
-      <Component
-        {...pageProps}
-        loadingProjects={loadingProjects}
-        projects={projects}
-      />
-    </Fragment>
+    <AuthProvider>
+      <Fragment>
+        {preloader && <Preloader />}
+
+        <Component
+          {...pageProps}
+          loadingProjects={loadingProjects}
+          projects={projects}
+        />
+      </Fragment>
+    </AuthProvider>
   );
 }
 
