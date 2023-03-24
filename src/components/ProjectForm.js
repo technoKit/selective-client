@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../utils/api";
 
 function ProjectForm(props) {
   const {
@@ -18,7 +18,7 @@ function ProjectForm(props) {
       projectId: props?.project?.id,
       projectTitle: props?.project?.attributes?.title,
     });
-    axios
+    api
       .post(`${process.env.NEXT_PUBLIC_BASE_URL}/application-for-projects`, {
         data: {
           ...data,
