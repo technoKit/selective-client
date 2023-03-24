@@ -1,10 +1,11 @@
 // api.js
 import Axios from "axios";
+const baseURL = `${process.env.NEXT_PUBLIC_BASE_URL}`;
 
 let urls = {
-  test: `http://localhost:1337/api`,
-  development: `http://localhost:1337/api`,
-  production: "https://your-production-url.com/",
+  test: baseURL,
+  development: baseURL,
+  production: baseURL,
 };
 const api = Axios.create({
   baseURL: urls[process.env.NODE_ENV],
