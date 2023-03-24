@@ -24,7 +24,7 @@ const Project1 = (props) => {
                 {project?.attributes?.location}
               </div>
               <h5 className="title">
-                <Link href="/project-details">
+                <Link href={`projects/${project.id}`}>
                   <a>{project?.attributes?.title}</a>
                 </Link>
               </h5>

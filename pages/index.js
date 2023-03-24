@@ -23,10 +23,12 @@ const Index = (props) => {
               </div>
               <div className="author">
                 <img src="assets/img/location.png" alt="Thumb" />
-                <Link href="/projects">{project?.attributes?.location}</Link>
+                <Link href={`projects/${project.id}`}>
+                  {project?.attributes?.location}
+                </Link>
               </div>
               <h5 className="title">
-                <Link href="/project-details">
+                <Link href={`projects/${project.id}`}>
                   <a>{project?.attributes?.title}</a>
                 </Link>
               </h5>
