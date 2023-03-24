@@ -22,7 +22,7 @@ const ProjectDetails = (props) => {
       let project = props?.projects.find((project) => project.id == id);
       setProject(project);
     }
-  }, [id]);
+  }, [id, props.projects]);
 
   const { login, loginError, loginLoading, user, isAuthenticated } = useAuth();
 
