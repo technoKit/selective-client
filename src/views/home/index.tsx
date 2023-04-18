@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import HeroSection from "./components/HeroSection";
 import WelcomeSection from "./components/WelcomeSection";
 import MotivationSection from "./components/MotivationSection";
+import ProjectsSection from "./components/ProjectsSection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,7 @@ export default function HomeView() {
         <HeroSection />
         <WelcomeSection />
       </div>
+      <ProjectsSection />
       <MotivationSection />
     </main>
   );
