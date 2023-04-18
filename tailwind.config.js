@@ -20,8 +20,10 @@ module.exports = {
           dark: "#081529",
         },
         secondary: "#F1BB55",
-        biege: {
+        beige: {
           light: "#F8F8F8",
+          dark: "#F1BB55",
+          normal: "#FFECC7",
         },
       },
     },
