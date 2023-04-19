@@ -4,6 +4,7 @@ import HeroSection from "./components/HeroSection";
 import WelcomeSection from "./components/WelcomeSection";
 import MotivationSection from "./components/MotivationSection";
 import ProjectsSection from "./components/ProjectsSection";
+import CompetitiveAdvantageSection from "./components/CompetitiveAdvantageSection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function HomeView() {
         <WelcomeSection />
       </div>
       <ProjectsSection />
+      <CompetitiveAdvantageSection />
       <MotivationSection />
     </main>
   );

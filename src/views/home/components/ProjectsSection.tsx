@@ -2,7 +2,7 @@ import HouseCard from "../../../components/HouseCard";
 import Link from "next/link";
 
 //https://source.unsplash.com/featured/?house
-const Cards = [
+const cards = [
   {
     id: 1,
     title: "Giza flat",
@@ -41,7 +41,7 @@ const Cards = [
 
 export default function Example() {
   return (
-    <div className="bg-beige-light py-24 sm:py-32">
+    <div className="bg-beige-light py-24 pb-20 sm:py-32 sm:pb-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
         <div className="text-center flex flex-col items-center">
           <img
@@ -49,10 +49,10 @@ export default function Example() {
             alt="location icon"
             className=" w-20 ml-1 mr-2 mb-[-14px] mt-[-45px]"
           />
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl ">
+          <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl ">
             Popular Projects
           </h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
+          <p className="mt-3 text-2xl leading-8 text-black">
             Explore our projects
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function Example() {
         />
 
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {Cards.map((card) => (
+          {cards.map((card) => (
             <HouseCard data={card} key={card.id} />
           ))}
         </div>
