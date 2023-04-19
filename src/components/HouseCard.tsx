@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // const data = {
 //   id: 1,
 //   title: "Giza flat",
@@ -39,13 +41,10 @@ function HouseCard({ data }: { data: any }) {
       </div>
       <div className="w-full py-7 px-9">
         <div className="group relative">
-          <h3 className="text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href={data.href}>
-              {/* <span className="absolute inset-0" /> */}
-              {data.title}
-            </a>
+          <h3 className="text-lg font-semibold leading-6 text-black">
+            {data.title}
           </h3>
-          <h3 className="mt-1 line-clamp-3 text-md leading-6 text-gray-600 flex flex-row items-center">
+          <h3 className="mt-1 line-clamp-3 text-md leading-6 text-primary flex flex-row items-center">
             <img
               src="./images/projects/location.svg"
               alt="location icon"
@@ -57,10 +56,10 @@ function HouseCard({ data }: { data: any }) {
 
         <div>
           <div className="mt-4 group relative flex flex-row justify-between items-center w-full">
-            <h4 className="text-lg font-medium leading-6 text-gray-900">
+            <h4 className="text-lg font-medium leading-6 text-black">
               Total shares
             </h4>
-            <h4 className="text-lg font-medium leading-6 text-gray-900">
+            <h4 className="text-lg font-medium leading-6 text-primary">
               {data.shares}
             </h4>
           </div>
@@ -72,18 +71,18 @@ function HouseCard({ data }: { data: any }) {
                 style={{ width: purchasedPercentage }}
               ></div>
             </div>
-            <h5 className="font-light">{purchasedPercentage}</h5>
+            <h5 className="font-light text-black">{purchasedPercentage}</h5>
           </div>
         </div>
         <div className="mt-6 flex flex-row justify-between items-center w-full">
           <div>
-            <h4 className="text-lg font-medium text-gray-900">Share price</h4>
-            <h4 className="text-lg font-light text-gray-900">
+            <h4 className="text-lg font-medium text-black">Share price</h4>
+            <h4 className="text-lg font-light text-primary">
               {data.sharePrice} $
             </h4>
           </div>
-          <button className="bg-beige-dark px-[32px] py-[0px] h-11 rounded-[40px]">
-            Learn More
+          <button className="bg-beige-dark border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-beige-normal hover:border-beige-dark transition-colors duration-500">
+            <Link href={data.href}>Learn More</Link>
           </button>
         </div>
       </div>

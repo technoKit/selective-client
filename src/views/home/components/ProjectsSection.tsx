@@ -1,4 +1,5 @@
 import HouseCard from "../../../components/HouseCard";
+import Link from "next/link";
 
 //https://source.unsplash.com/featured/?house
 const Cards = [
@@ -41,20 +42,41 @@ const Cards = [
 export default function Example() {
   return (
     <div className="bg-beige-light py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
+        <div className="text-center flex flex-col items-center">
+          <img
+            src="./images/projects/sphinx.svg"
+            alt="location icon"
+            className=" w-20 ml-1 mr-2 mb-[-14px] mt-[-45px]"
+          />
+          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl ">
             Popular Projects
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
             Explore our projects
           </p>
         </div>
+
+        <img
+          src="./images/projects/temple.svg"
+          alt="location icon"
+          className="absolute top-24 left-[-25px] w-20 ml-1 mr-2"
+        />
+
+        <img
+          src="./images/projects/waves.svg"
+          alt="location icon"
+          className="absolute top-72 right-[-25px] w-24 ml-1 mr-2"
+        />
+
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {Cards.map((card) => (
             <HouseCard data={card} key={card.id} />
           ))}
         </div>
+        <button className="bg-primary border-2 border-primary text-white mt-10 px-[32px] py-[13px] rounded-[40px] hover:bg-primary-light transition-colors duration-500">
+          <Link href="projects">Explore All Projects</Link>
+        </button>
       </div>
     </div>
   );
