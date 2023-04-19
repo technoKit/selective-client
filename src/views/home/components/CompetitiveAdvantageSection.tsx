@@ -1,10 +1,24 @@
 const cards = [
   {
     id: 1,
-    iconURL:
-      "https://images.unsplash.com/photo-1633683914992-ded93eb8b18a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8aG91c2V8fHx8fHwxNjgxOTA4NzI5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    iconURL: "./images/competitive_advantage/hand.svg",
     content:
       "Our selective approach means we offer exclusive access to real estate investment opportunities that provide unmatched potential for building long-term wealth.",
+    backgroundColor: "#E1E4E8",
+  },
+  {
+    id: 2,
+    iconURL: "./images/competitive_advantage/checkMark.svg",
+    content:
+      "Our platform utilizes cutting-edge security measures and efficient investment processes, ensuring that investors can confidently invest in real estate opportunities from anywhere in the world with ease and security.",
+    backgroundColor: "#FFECC7",
+  },
+  {
+    id: 3,
+    iconURL: "./images/competitive_advantage/chart.svg",
+    content:
+      "Our platform operates with full transparency and compliance, ensuring that investors can confidently invest in international real estate opportunities without worrying about legal or regulatory hurdles.",
+    backgroundColor: "#E1E4E8",
   },
 ];
 
@@ -15,13 +29,13 @@ export default function CompetitiveAdvantageSection() {
         <div className="text-center flex flex-col items-center">
           <div className="w-full flex justify-end  mt-[-65px]">
             <img
-              src="./images/competitve_advantage/bird.svg"
+              src="./images/competitive_advantage/bird.svg"
               alt="location icon"
               className=" w-14 mr-[-6px] mb-[-25px]"
             />
           </div>
           <img
-            src="./images/competitve_advantage/templeGate.svg"
+            src="./images/competitive_advantage/templeGate.svg"
             alt="location icon"
             className=" absolute w-14 left-0 top-14"
           />
@@ -35,9 +49,13 @@ export default function CompetitiveAdvantageSection() {
             Reasons to trust Selective Capital
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-28 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {cards.map((card) => (
-            <AdvantageCard data={card} key={card.id} />
+            <AdvantageCard
+              data={card}
+              key={card.id}
+              topMargin={card.id % 2 == 0 ? "50px" : ""}
+            />
           ))}
         </div>
       </div>
@@ -45,32 +63,33 @@ export default function CompetitiveAdvantageSection() {
   );
 }
 
-function AdvantageCard({ data }: { data: any }) {
+function AdvantageCard({ data, topMargin }: { data: any; topMargin: string }) {
   const rounded = "30px";
 
   return (
     <article
       key={data.id}
-      className="bg-white flex flex-col items-start justify-between w-full h-auto ring-2 ring-gray-100 shadow-md shadow-gray-200"
-      style={{ borderRadius: rounded }}
+      className="bg-white flex flex-col items-center justify-top w-full h-fit min-h-[285px] ring-2 ring-gray-100 shadow-md shadow-gray-200"
+      style={{ borderRadius: rounded, marginTop: topMargin }}
     >
-      <div className="relative w-full">
+      <div
+        className="mt-[-62px] py-6 px-3 rounded-[40px]"
+        style={{ backgroundColor: data.backgroundColor }}
+      >
         <img
           src={data.iconURL}
-          alt="house image"
-          className={`aspect-[16/9] w-full rounded-t-[30px] bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[10/6]`}
+          alt="icon"
+          className="w-20"
           style={{
             borderTopLeftRadius: rounded,
             borderTopRightRadius: rounded,
           }}
         />
       </div>
-      <div className="w-full py-7 px-9">
-        <div className="group relative">
-          <p className="mt-1 line-clamp-3 text-md leading-6 text-primary flex flex-row items-center">
-            {data.content}
-          </p>
-        </div>
+      <div className="w-full mt-4 px-9 pb-7">
+        <p className="mt-1 line-clamp-3 text-md text-primary flex flex-col items-start  text-primary text-center">
+          {data.content}
+        </p>
       </div>
     </article>
   );
