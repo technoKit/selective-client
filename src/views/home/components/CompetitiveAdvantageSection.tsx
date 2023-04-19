@@ -69,7 +69,7 @@ function AdvantageCard({ data, topMargin }: { data: any; topMargin: string }) {
   return (
     <article
       key={data.id}
-      className="bg-white flex flex-col items-center justify-top w-full h-fit min-h-[285px] ring-2 ring-gray-100 shadow-md shadow-gray-200"
+      className="bg-white flex flex-col items-center justify-top w-full h-fit min-h-[285px] shadow-md shadow-gray-100"
       style={{ borderRadius: rounded, marginTop: topMargin }}
     >
       <div
