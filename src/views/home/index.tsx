@@ -14,8 +14,8 @@ export default function HomeView() {
         <HeroSection />
         <WelcomeSection />
       </div>
-      <ProjectsSection />
       <MotivationSection />
+      <ProjectsSection />
     </main>
   );
 }

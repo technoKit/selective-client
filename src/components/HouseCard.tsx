@@ -64,10 +64,10 @@ function HouseCard({ data }: { data: any }) {
             </h4>
           </div>
           <div className="flex flex-row justify-between items-center mt-1">
-            <div className="relative h-2.5 mt-2 rounded-full bg-beige-normal w-[80%]">
+            <div className="relative h-2.5 mt-2 rounded-full bg-secondary-normal w-[80%]">
               <div
                 //SOLVE ISSUE of PROGRESS BAR
-                className={`absolute top-0 left-0 h-full rounded-full bg-beige-dark`}
+                className={`absolute top-0 left-0 h-full rounded-full bg-secondary-dark`}
                 style={{ width: purchasedPercentage }}
               ></div>
             </div>
@@ -81,7 +81,7 @@ function HouseCard({ data }: { data: any }) {
               {data.sharePrice} $
             </h4>
           </div>
-          <button className="bg-beige-dark border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-beige-normal hover:border-beige-dark transition-colors duration-500">
+          <button className="bg-secondary-dark border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-normal hover:border-secondary-dark transition-colors duration-500">
             <Link href={data.href}>Learn More</Link>
           </button>
         </div>
