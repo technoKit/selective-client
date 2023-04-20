@@ -15,20 +15,21 @@ const cards = [
 
 export default function OurPartnersSection() {
   return (
-    <div className="bg-beige-light py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
-        <div className="text-center flex flex-col items-center">
-          <div className="w-full flex justify-end  mt-[-65px]">
+    // overflow-x-hidden
+    <div className="bg-beige-light py-20 sm:pb-24 ">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-row justify-between items-center">
+        <div className="flex flex-col items-start justify-center">
+          {/* <div className="w-full flex justify-end  mt-[-65px]">
             <img
-              src="./images/competitive_advantage/bird.svg"
+              src="./images/our_partners/waves.svg"
               alt="location icon"
               className=" w-14 mr-[-6px] mb-[-25px]"
             />
-          </div>
+          </div> */}
           <img
-            src="./images/competitive_advantage/templeGate.svg"
+            src="./images/our_partners/pyramids.svg"
             alt="location icon"
-            className=" absolute w-14 left-0 top-14"
+            className="w-16 mb-[-27px] mt-[-30px] ml-[-33px]"
           />
           <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl ">
             Our Partners
@@ -37,25 +38,23 @@ export default function OurPartnersSection() {
             Trusted Partners
           </p>
         </div>
-        <div className="mx-auto mt-28 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 z-10">
           {cards.map((card) => (
-            <AdvantageCard data={card} key={card.id} />
+            <div
+              key={card.id}
+              className="py-6 px-5 rounded-[40px] bg-white shadow-md shadow-gray-100 flex items-center justify-center w-52 "
+            >
+              <img src={card.imageURL} alt="icon" className="h-24" />
+            </div>
           ))}
         </div>
+        <img
+          src="./images/our_partners/waves.svg"
+          alt="location icon"
+          className="w-24 absolute z-0 right-[-45px] top-[-40px]"
+        />
+        {/* mt-[-110px] ml-[-200px] mr-[-70px] z-0 */}
       </div>
     </div>
-  );
-}
-
-function AdvantageCard({ data }: { data: any }) {
-  return (
-    <article
-      key={data.id}
-      className="bg-white w-full shadow-md shadow-gray-100 rounded-[30px]"
-    >
-      <div className="py-6 px-3 rounded-[40px]">
-        <img src={data.imageURL} alt="icon" className="w-20" />
-      </div>
-    </article>
   );
 }
