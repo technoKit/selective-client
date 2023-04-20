@@ -15,9 +15,9 @@ export default function HomeView() {
         <HeroSection />
         <WelcomeSection />
       </div>
+      <MotivationSection />
       <ProjectsSection />
       <CompetitiveAdvantageSection />
-      <MotivationSection />
     </main>
   );
 }
