@@ -15,30 +15,22 @@ const cards = [
 
 export default function OurPartnersSection() {
   return (
-    // overflow-x-hidden
-    <div className="bg-beige-light py-20 sm:pb-24 ">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-row justify-between items-center">
-        <div className="flex flex-col items-start justify-center">
-          {/* <div className="w-full flex justify-end  mt-[-65px]">
-            <img
-              src="./images/our_partners/waves.svg"
-              alt="location icon"
-              className=" w-14 mr-[-6px] mb-[-25px]"
-            />
-          </div> */}
+    <div className="bg-secondary-light py-20 sm:pb-24 overflow-x-hidden	">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-between items-center md:flex-row">
+        <div className="flex flex-col md:items-start items-center justify-center">
           <img
             src="./images/our_partners/pyramids.svg"
             alt="location icon"
             className="w-16 mb-[-27px] mt-[-30px] ml-[-33px]"
           />
-          <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl ">
+          <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl z-10">
             Our Partners
           </h2>
-          <p className="mt-4 text-2xl  leading-8 text-black">
+          <p className="mt-4 text-2xl  leading-8 text-black z-10">
             Trusted Partners
           </p>
         </div>
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 z-10">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 md:gap-y-10 gap-y-10 md:mx-0 md:max-w-none md:grid-cols-3 sm:flex sm:justify-center sm:items-center sm:flex-wrap z-10 mt-10 md:mt-0">
           {cards.map((card) => (
             <div
               key={card.id}
@@ -51,9 +43,8 @@ export default function OurPartnersSection() {
         <img
           src="./images/our_partners/waves.svg"
           alt="location icon"
-          className="w-24 absolute z-0 right-[-45px] top-[-40px]"
+          className="w-24 absolute z-0 right-[-45px] top-[250px] md:top-[-40px]"
         />
-        {/* mt-[-110px] ml-[-200px] mr-[-70px] z-0 */}
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const cards = [
 
 export default function CompetitiveAdvantageSection() {
   return (
-    <div className="bg-beige-light py-24 sm:py-32">
+    <div className="bg-secondary-light py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
         <div className="text-center flex flex-col items-center">
           <div className="w-full flex justify-end  mt-[-65px]">
