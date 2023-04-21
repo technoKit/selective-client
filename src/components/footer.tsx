@@ -5,7 +5,7 @@ import { AtSymbolIcon } from "@heroicons/react/24/outline";
 export default function Footer() {
   return (
     <div>
-      <div className="w-full min-h-[200px] bg-[url('/images/footer/Vector.png')] "></div>
+      <div className="w-full min-h-[200px] bg-[url('/images/footer/Vector.png')] bg-slate-100"></div>
       <div className="w-full">
         <div className="md:grid md:grid-cols-6 gap-4 bg-primary min-h-[400px]">
           <div className="flex justify-center items-start  col-span-2">
