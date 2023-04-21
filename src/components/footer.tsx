@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex justify-center items-start  col-span-2">
             <img
               className="block w-[130px] z-0 mt-8"
-              src="./images/footer/logo.svg"
+              src="/images/footer/logo.svg"
               alt="Your Company"
             />
           </div>
