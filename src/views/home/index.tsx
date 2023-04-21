@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import HeroSection from "./components/HeroSection";
 import WelcomeSection from "./components/WelcomeSection";
@@ -7,9 +6,16 @@ import ProjectsSection from "./components/ProjectsSection";
 import CompetitiveAdvantageSection from "./components/CompetitiveAdvantageSection";
 import OurPartnersSection from "./components/OurPartners";
 
+import { Project } from "@/types";
+
 const inter = Inter({ subsets: ["latin"] });
 
-export default function HomeView() {
+export default function HomeView({ projects }: { projects: Project[] | null }) {
+  console.log("projects :>> ", projects);
+  if (projects) {
+    projects = projects.slice(0, 3);
+  }
+
   return (
     <main>
       <div className="bg-slate-100 pb-5">
@@ -17,7 +23,7 @@ export default function HomeView() {
         <WelcomeSection />
       </div>
       <MotivationSection />
-      <ProjectsSection />
+      <ProjectsSection projects={projects} />
       <CompetitiveAdvantageSection />
       <OurPartnersSection />
     </main>

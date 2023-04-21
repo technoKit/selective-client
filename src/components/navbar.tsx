@@ -81,12 +81,12 @@ export default function Navbar() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-11 w-auto lg:hidden"
-                    src="./logo.png"
+                    src="/logo.png"
                     alt="Your Company"
                   />
                   <img
                     className="hidden h-11 w-auto lg:block"
-                    src="./logo.png"
+                    src="/logo.png"
                     alt="Your Company"
                   />
                 </div>

@@ -1,6 +1,9 @@
 import HouseCard from "../../../components/HouseCard";
 import Link from "next/link";
 
+//types imports
+import { Project } from "@/types";
+
 //https://source.unsplash.com/featured/?house
 const cards = [
   {
@@ -72,7 +75,11 @@ const cards = [
   // More posts...
 ];
 
-export default function MainSection() {
+export default function MainSection({
+  projects,
+}: {
+  projects: Project[] | null;
+}) {
   return (
     <div className="bg-slate-100 py-24 pb-20 sm:py-32 sm:pb-10 overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
@@ -103,9 +110,11 @@ export default function MainSection() {
         />
 
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {cards.map((card) => (
-            <HouseCard data={card} key={card.id} />
-          ))}
+          {projects?.length &&
+            projects?.length > 0 &&
+            projects.map((project) => (
+              <HouseCard data={project} key={project.id} />
+            ))}
         </div>
       </div>
     </div>
