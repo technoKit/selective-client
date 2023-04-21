@@ -21,7 +21,7 @@ const items = [
 
 export default function Example() {
   return (
-    <div className="mx-auto max-w-7xl px-6 lg:px-8 my-10">
+    <div className="mx-auto max-w-7xl px-6 lg:px-8 my-10 overflow-x-hidden">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
           Who are we?
