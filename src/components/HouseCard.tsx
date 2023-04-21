@@ -1,18 +1,17 @@
 import Link from "next/link";
 
-// const data = {
-//   id: 1,
-//   title: "Giza flat",
-//   href: "#",
-//   location: "Giza",
-//   imageUrl:
-//     "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
-//   shares: 300,
-//   sharesPurchased: 42,
-//   sharePrice: 100,
-// };
+interface cardData {
+  id: number;
+  title: string;
+  href: string;
+  location: string;
+  imageUrl: string;
+  shares: number;
+  sharesPurchased: number;
+  sharePrice: number;
+}
 
-function HouseCard({ data }: { data: any }) {
+function HouseCard({ data }: { data: cardData }) {
   // console.log(Math.round((data.sharesPurchased / data.shares) * 100));
   const purchasedPercentage =
     ((data.sharesPurchased / data.shares) * 100 < 100

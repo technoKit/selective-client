@@ -21,8 +21,11 @@ module.exports = {
         },
         secondary: {
           light: "#F8F8F8",
-          dark: "#F1BB55",
           normal: "#FFECC7",
+          dark: "#F1BB55",
+        },
+        pink: {
+          light: "#E1E4E8",
         },
       },
     },
