@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
 import SimpleMap from "./components/SimpleMap";
+import ReactMarkdown from "react-markdown";
 
 //types imports
 import { Project } from "@/types";
@@ -151,6 +152,13 @@ export default function SingleProjectsView({
           </div>
           {project && (
             <SimpleMap location={JSON.parse(project.attributes.map_location)} />
+          )}
+          {project && project?.attributes?.description && (
+            <div className="mt-8 bg-white p-8 rounded-2xl shadow-xl">
+              <ReactMarkdown className="whitespace-pre-wrap">
+                {project?.attributes?.description}
+              </ReactMarkdown>
+            </div>
           )}
         </div>
       </div>
