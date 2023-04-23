@@ -20,7 +20,7 @@ type authContextType = {
   login?: (email: string, password: string) => void;
   loginLoading?: boolean;
   loginError?: string | null;
-  logout?: (email: string, password: string) => void;
+  logout?: () => void;
 };
 
 const AuthContext = createContext<authContextType>({});
@@ -39,7 +39,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     async function loadUserFromCookies() {
       const jwt = Cookies.get("jwt");
       if (jwt) {
-        console.log("Got a jwt in the cookies, let's see if it is valid");
         api.defaults.headers.Authorization = `Bearer ${jwt}`;
         const result = await api.get("users/me");
         const user = result.data;
@@ -104,7 +103,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const logout = (email: string, password: string) => {
+  const logout = () => {
+    console.log("logout called");
     Cookies.remove("jwt");
     setUser(null);
     delete api.defaults.headers.Authorization;
