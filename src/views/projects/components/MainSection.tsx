@@ -81,7 +81,7 @@ export default function MainSection({
   projects: Project[] | null;
 }) {
   return (
-    <div className="bg-slate-100 py-24 pb-20 sm:py-32 sm:pb-10 overflow-x-hidden">
+    <div className="bg-slate-100 py-24 sm:py-32 sm:pb-10 overflow-x-hidden md:pb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
         <div className="text-center flex flex-col items-center">
           <img

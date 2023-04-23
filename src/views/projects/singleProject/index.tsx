@@ -5,7 +5,8 @@ import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
 import SimpleMap from "./components/SimpleMap";
 import ReactMarkdown from "react-markdown";
-
+import { useAuth } from "@/contexts/auth";
+import BuySharesForm from "./components/BuySharesForm";
 //types imports
 import { Project } from "@/types";
 import Link from "next/link";
@@ -22,7 +23,6 @@ export default function SingleProjectsView({
   const { id } = router.query;
 
   const [project, setProject] = useState<Project | null>(null);
-  console.log("the_project :>> ", project);
   useEffect(() => {
     if (projects?.length && projects?.length > 0) {
       let project = projects.find((project) => project.id.toString() == id);
@@ -53,6 +53,8 @@ export default function SingleProjectsView({
 
   const rounded = "30px";
 
+  const { login, loginError, loginLoading, user, isAuthenticated } = useAuth();
+
   return (
     <main>
       <div className="bg-slate-100  pb-20 pt-10 sm:pb-10 overflow-x-hidden">
@@ -66,7 +68,7 @@ export default function SingleProjectsView({
               {project?.attributes.title}
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-4">
             {project && <ImageGallery items={images} />}
             {project && (
               <div
@@ -158,6 +160,38 @@ export default function SingleProjectsView({
               <ReactMarkdown className="whitespace-pre-wrap">
                 {project?.attributes?.description}
               </ReactMarkdown>
+            </div>
+          )}
+          {project && !isAuthenticated && (
+            <div className="mt-8 bg-primary p-8 rounded-2xl shadow-xl mb-16">
+              <div className="text-secondary font-bold text-2xl">
+                Sign up to be able to buy shares
+              </div>
+              <div className="text-white text-xl mt-2">
+                By logging in you will join our waiting list for active users.
+                We will notify you once you can buy shares.
+              </div>
+              <div className="flex justify-end">
+                <button className="bg-secondary border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500 mt-5 ">
+                  <Link href={`/sign-up`}>Sign Up</Link>
+                </button>
+              </div>
+            </div>
+          )}
+          {project && isAuthenticated && !user?.canBuy && (
+            <div className="mt-8 bg-primary p-8 rounded-2xl shadow-xl mb-16">
+              <div className="text-secondary font-bold text-2xl">
+                You are on our waiting list
+              </div>
+              <div className="text-white text-xl mt-2">
+                Thank you for joining our waiting list. We will inform you
+                shortly once you have access to buy shares.
+              </div>
+            </div>
+          )}
+          {project && isAuthenticated && user?.canBuy && (
+            <div className="mt-8 mb-16">
+              <BuySharesForm project={project} />
             </div>
           )}
         </div>
