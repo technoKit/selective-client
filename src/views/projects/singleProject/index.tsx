@@ -36,21 +36,26 @@ export default function SingleProjectsView({
 
   //gallery images states logic
   const [images, setImages] = useState<ReactImageGalleryItem[]>([]);
+  const [fullScreen, setFullScreen] = useState<boolean>(false);
+  console.log("fullScreen :>> ", fullScreen);
+
   useEffect(() => {
     if (project) {
       const images = project?.attributes?.gallery?.data.map((image) => ({
         original: image.attributes.url,
         thumbnail: image.attributes.url,
-
-        originalClass:
-          "w-full h-[400px] object-cover overflow-hidden rounded-3xl",
+        originalHeight: 400,
+        originalWidth: 400,
+        originalClass: `w-full ${
+          !fullScreen ? "h-[400px]" : "h-[100vh]"
+        } object-cover overflow-hidden rounded-3xl`,
         thumbnailClass:
           "w-[100px] h-[60px] object-cover overflow-hidden rounded-xl mt-3",
       }));
       if (!images) return;
       setImages(images);
     }
-  }, [project]);
+  }, [project, fullScreen]);
 
   const rounded = "30px";
 
@@ -59,7 +64,9 @@ export default function SingleProjectsView({
   return (
     <main>
       <div className="bg-slate-100  pb-20 pt-10 sm:pb-10 overflow-x-hidden">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative min-h-[100vh]">
+        <div
+          className={`mx-auto max-w-7xl px-6 lg:px-8 relative min-h-[100vh]`}
+        >
           <div className="flex ">
             <Link href="/projects" className="text-primary text-xl">
               Projects
@@ -70,7 +77,14 @@ export default function SingleProjectsView({
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-4">
-            {project && <ImageGallery items={images} />}
+            {project && (
+              <ImageGallery
+                items={images}
+                onScreenChange={(value) => {
+                  setFullScreen(value);
+                }}
+              />
+            )}
             {project && (
               <div
                 key={project.id}
