@@ -7,6 +7,13 @@ import SimpleMap from "./components/SimpleMap";
 import ReactMarkdown from "react-markdown";
 import { useAuth } from "@/contexts/auth";
 import BuySharesForm from "./components/BuySharesForm";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import dynamic from "next/dynamic";
+// import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+// import ClassicEditor from "@/utils/ckeditor5-37.1.0-customBuild-ghannam/build_/ckeditor"; //this is a custom build for ckeditor5 with the alignment plugin included created by the online tool  https://ckeditor.com/ckeditor-5/online-builder/
+
+const Editor = dynamic(() => import("@/utils/Editor"), { ssr: false });
+
 //types imports
 import { Project } from "@/types";
 import Link from "next/link";
@@ -180,9 +187,7 @@ export default function SingleProjectsView({
           )}
           {project && project?.attributes?.description && (
             <div className="mt-8 bg-white p-8 rounded-2xl shadow-xl">
-              <ReactMarkdown className="whitespace-pre-wrap">
-                {project?.attributes?.description}
-              </ReactMarkdown>
+              <Editor value={project?.attributes?.description} />
             </div>
           )}
           <div id="app-section">
