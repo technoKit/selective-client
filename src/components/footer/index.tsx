@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PhoneIcon } from "@heroicons/react/24/outline";
 import { AtSymbolIcon } from "@heroicons/react/24/outline";
+import Form from "./components/Form";
 
 export default function Footer() {
   return (
@@ -98,13 +99,8 @@ export default function Footer() {
                 webmaster@selective.capital
               </div>
             </div>
-            <div className="flex mt-10">
-              <div className="flex h-[40px] w-[300px] rounded-full border-2 border-solid border-secondary overflow-hidden">
-                <input className="bg-primary w-[60%] text-white ml-2" />
-                <button className="bg-secondary w-[40%] rounded-full">
-                  Subscribe
-                </button>
-              </div>
+            <div className="flex mt-10 w-full">
+              <Form />
             </div>
           </div>
         </div>
