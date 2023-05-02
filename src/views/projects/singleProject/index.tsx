@@ -11,6 +11,7 @@ import BuySharesForm from "./components/BuySharesForm";
 import { Project } from "@/types";
 import Link from "next/link";
 import { AnyARecord } from "dns";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -144,9 +145,17 @@ export default function SingleProjectsView({
                     </div>
                   </div>
                   <div className="w-full flex justify-center">
-                    <button className="bg-secondary border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500 mt-10 ">
-                      <Link href={`#`}>Apply for your shares now</Link>
-                    </button>
+                    <ScrollLink
+                      to={`app-section`}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                      activeClass="active"
+                    >
+                      <button className="bg-secondary border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500 mt-10 ">
+                        Apply for your shares now
+                      </button>
+                    </ScrollLink>
                   </div>
                 </div>
               </div>
@@ -162,38 +171,40 @@ export default function SingleProjectsView({
               </ReactMarkdown>
             </div>
           )}
-          {project && !isAuthenticated && (
-            <div className="mt-8 bg-primary p-8 rounded-2xl shadow-xl mb-16">
-              <div className="text-secondary font-bold text-2xl">
-                Sign up to be able to buy shares
+          <div id="app-section">
+            {project && !isAuthenticated && (
+              <div className="mt-8 bg-primary p-8 rounded-2xl shadow-xl mb-16">
+                <div className="text-secondary font-bold text-2xl">
+                  Sign up to be able to buy shares
+                </div>
+                <div className="text-white text-xl mt-2">
+                  By logging in you will join our waiting list for active users.
+                  We will notify you once you can buy shares.
+                </div>
+                <div className="flex justify-end">
+                  <button className="bg-secondary border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500 mt-5 ">
+                    <Link href={`/sign-up`}>Sign Up</Link>
+                  </button>
+                </div>
               </div>
-              <div className="text-white text-xl mt-2">
-                By logging in you will join our waiting list for active users.
-                We will notify you once you can buy shares.
+            )}
+            {project && isAuthenticated && !user?.canBuy && (
+              <div className="mt-8 bg-primary p-8 rounded-2xl shadow-xl mb-16">
+                <div className="text-secondary font-bold text-2xl">
+                  You are on our waiting list
+                </div>
+                <div className="text-white text-xl mt-2">
+                  Thank you for joining our waiting list. We will inform you
+                  shortly once you have access to buy shares.
+                </div>
               </div>
-              <div className="flex justify-end">
-                <button className="bg-secondary border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500 mt-5 ">
-                  <Link href={`/sign-up`}>Sign Up</Link>
-                </button>
+            )}
+            {project && isAuthenticated && user?.canBuy && (
+              <div className="mt-8 mb-16">
+                <BuySharesForm project={project} />
               </div>
-            </div>
-          )}
-          {project && isAuthenticated && !user?.canBuy && (
-            <div className="mt-8 bg-primary p-8 rounded-2xl shadow-xl mb-16">
-              <div className="text-secondary font-bold text-2xl">
-                You are on our waiting list
-              </div>
-              <div className="text-white text-xl mt-2">
-                Thank you for joining our waiting list. We will inform you
-                shortly once you have access to buy shares.
-              </div>
-            </div>
-          )}
-          {project && isAuthenticated && user?.canBuy && (
-            <div className="mt-8 mb-16">
-              <BuySharesForm project={project} />
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </main>

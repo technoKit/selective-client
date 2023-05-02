@@ -30,12 +30,14 @@
     "react-hook-form": "^7.43.9",
     "react-image-gallery": "^1.2.11",
     "react-markdown": "^8.0.7",
+    "react-scroll": "^1.8.9",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.4"
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.7",
     "@types/js-cookie": "^3.0.3",
-    "@types/react-image-gallery": "^1.2.0"
+    "@types/react-image-gallery": "^1.2.0",
+    "@types/react-scroll": "^1.8.7"
   }
 }
