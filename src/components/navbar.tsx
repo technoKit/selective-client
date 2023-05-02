@@ -109,7 +109,7 @@ export default function Navbar() {
                       </button>
                     </div>
                     <div className="flex-shrink-0">
-                      <Link href={"sign-up"}>
+                      <Link href={"/sign-up"}>
                         <button
                           type="button"
                           className="relative inline-flex items-center gap-x-1.5 rounded-3xl  px-5 py-2 text-sm font-semibold text-primary hover:text-white shadow-sm bg-secondary hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary border-primary"
