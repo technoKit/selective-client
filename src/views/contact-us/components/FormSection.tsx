@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import api from "@/utils/api";
 
 type MessageValues = {
   name: string;
@@ -9,6 +11,9 @@ type MessageValues = {
 };
 
 export default function FormSection() {
+  const [success, setSuccess] = useState<boolean | null>(null);
+  const [failure, setFailure] = useState<boolean | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -23,9 +28,20 @@ export default function FormSection() {
     message: string;
   }) => {
     console.log("data :>> ", data);
-    // if (!login) return;
-    // login(data.email, data.password);
-    // signUp(data.name, data.email, data.password);
+    api
+      .post(`${process.env.NEXT_PUBLIC_BASE_URL}/application-for-contacts`, {
+        data: {
+          ...data,
+        },
+      })
+      .then(function (response: any) {
+        setSuccess(true);
+        setFailure(false);
+      })
+      .catch(function (error: any) {
+        setSuccess(false);
+        setFailure(true);
+      });
   };
 
   return (
@@ -91,13 +107,33 @@ export default function FormSection() {
             />
           </div>
         </div>
-        <div className="mt-2 rounded-3xl shadow-sm md:w-[50%] sm:w-[80%]">
-          <button
-            onClick={handleSubmit(onSubmit)}
-            className="h-14 w-full rounded-full border-0 text-white ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary hover:bg-primary-light sm:text-sm sm:leading-6 bg-primary "
-          >
-            <div className="text-xl">Send Message</div>
-          </button>
+
+        <div className="mt-2 rounded-3xl shadow-sm md:w-[50%] sm:w-[80%] mb-32">
+          {!success && (
+            <button
+              onClick={handleSubmit(onSubmit)}
+              className="h-14 w-full rounded-full border-0 text-white ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary hover:bg-primary-light sm:text-sm sm:leading-6 bg-primary "
+            >
+              <div className="text-xl">Send Message</div>
+            </button>
+          )}
+          {success && (
+            <div className=" flex justify-center items-center rounded-lg border-0 py-2 px-2 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6  w-full  ml-auto bg-green-200  text-green-600 ">
+              <div className="text-lg text-center ">
+                Request sent successfully. we will contact you soon
+              </div>
+            </div>
+          )}
+          {failure && (
+            <div
+              className="text-center mt-2"
+              style={{
+                color: "red",
+              }}
+            >
+              failed to send message
+            </div>
+          )}
         </div>
       </div>
     </div>
