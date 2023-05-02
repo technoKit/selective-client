@@ -72,9 +72,11 @@ function HouseCard({ data }: { data: Project }) {
               {project.share_price} $
             </h4>
           </div>
-          <button className="bg-secondary border-2 text-primary px-[20px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500">
-            <Link href={`projects/${data.id}`}>Learn More</Link>
-          </button>
+          <Link href={`projects/${data.id}`}>
+            <button className="bg-secondary border-2 text-primary px-[20px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500">
+              Invest
+            </button>
+          </Link>
         </div>
       </div>
     </article>
