@@ -173,8 +173,12 @@ export default function SingleProjectsView({
                       duration={500}
                       activeClass="active"
                     >
-                      <button className="bg-secondary border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500 mt-10 ">
+                      <button className="bg-secondary border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500 mt-10 relative">
                         Apply for your shares now
+                        <span className="absolute flex h-3 w-3 right-0 top-0">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-light opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-3 w-3  bg-primary"></span>
+                        </span>
                       </button>
                     </ScrollLink>
                   </div>

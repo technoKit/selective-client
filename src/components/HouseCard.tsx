@@ -44,6 +44,40 @@ function HouseCard({ data }: { data: Project }) {
             {project.location}
           </h3>
         </div>
+        <div className="w-full  mt-8 flex ">
+          <div className="w-[25%]">
+            <div className="text-sm h-12 border-solid border-2 border-slate-400 rounded-xl mt-1 shadow-lg w-[80%] flex justify-center items-center text-slate-500 font-bold">
+              {project?.gross_yield ?? "-"}
+            </div>
+            <div className="text-start text-sm text-slate-500 mt-1 w-[80%]">
+              {`Gross Yield`}
+            </div>
+          </div>
+          <div className="w-[25%]">
+            <div className="text-sm h-12 border-solid border-2 border-slate-400 rounded-xl mt-1 shadow-lg w-[80%] flex justify-center items-center text-slate-500 font-bold">
+              {project?.expected_return ?? "-"}
+            </div>
+            <div className="w-[80%] text-start text-sm text-slate-500 mt-1">
+              Expected Return
+            </div>
+          </div>
+          <div className="w-[25%]">
+            <div className="text-sm h-12 border-solid border-2 border-slate-400 rounded-xl mt-1 shadow-lg w-[80%] flex justify-center items-center text-slate-500 font-bold">
+              {project?.dividend_yield ?? "-"}
+            </div>
+            <div className="text-start text-sm text-slate-500 mt-1 w-[80%]">
+              Dividend Yield
+            </div>
+          </div>
+          <div className="w-[25%]">
+            <div className="text-sm h-12 border-solid border-2 border-slate-400 rounded-xl mt-1 shadow-lg w-[80%] flex justify-center items-center text-slate-500 font-bold">
+              {project?.rental_income ?? "-"}
+            </div>
+            <div className="w-[80%] text-start text-sm text-slate-500 mt-1">
+              Rental Income
+            </div>
+          </div>
+        </div>
 
         <div>
           <div className="mt-4 group relative flex flex-row justify-between items-center w-full">

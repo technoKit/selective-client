@@ -28,5 +28,9 @@ export type Project = {
     main_image?: MediaAttribute;
     gallery?: MultiMediaAttribute;
     description: string;
+    gross_yield: string;
+    expected_return: string;
+    dividend_yield: string;
+    rental_income: string;
   };
 };
