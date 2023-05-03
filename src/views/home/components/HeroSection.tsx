@@ -34,11 +34,15 @@ export default function HeroSection() {
               laborum ea consequat. Nisi irure aliquip nisi adipisicing veniam
               voluptate id. In veniam incididunt ex veniam adipisicing sit.
             </p>
-            <div className="mt-10 flex items-center gap-x-6">
+            <div className="mt-10 flex items-center gap-x-6 ">
               <Link
                 href="/projects"
-                className="rounded-3xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className="rounded-3xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary relative"
               >
+                <span className="absolute flex h-3 w-3 right-0 top-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-light opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+                </span>
                 Explore Projects
               </Link>
               <Link
