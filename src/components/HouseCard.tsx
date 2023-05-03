@@ -13,7 +13,7 @@ function HouseCard({ data }: { data: Project }) {
   return (
     <article
       key={data.id}
-      className="bg-white flex flex-col items-start justify-between w-full h-auto ring-2 ring-gray-100 shadow-md shadow-gray-200"
+      className="bg-white flex flex-col items-start justify-between w-full h-auto  ring-gray-100  shadow-3xl"
       style={{ borderRadius: rounded }}
     >
       <div className="relative w-full">
@@ -55,10 +55,10 @@ function HouseCard({ data }: { data: Project }) {
             </h4>
           </div>
           <div className="flex flex-row justify-between items-center mt-1">
-            <div className="relative h-2.5 mt-2 rounded-full bg-secondary-light w-[80%]">
+            <div className="relative h-2.5 mt-2 rounded-full bg-primary-light w-[80%]">
               <div
                 //SOLVE ISSUE of PROGRESS BAR
-                className={`absolute top-0 left-0 h-full rounded-full bg-secondary`}
+                className={`absolute top-0 left-0 h-full rounded-full bg-primary`}
                 style={{ width: purchasedPercentage }}
               ></div>
             </div>
@@ -73,7 +73,7 @@ function HouseCard({ data }: { data: Project }) {
             </h4>
           </div>
           <Link href={`projects/${data.id}`}>
-            <button className="bg-secondary border-2 text-primary px-[20px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500">
+            <button className="bg-primary border-2 px-[20px] py-[0px] h-11 rounded-[40px] hover:bg-primary-light hover:border-primary-dark transition-colors duration-500 text-white font-bold shadow-xl">
               Invest
             </button>
           </Link>

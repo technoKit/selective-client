@@ -1,10 +1,11 @@
 import Link from "next/link";
+import React from "react";
 
 export default function HeroSection() {
   return (
     <div className="lg:mt-[-100px]">
       <div className="relative isolate pt-5">
-        <div className="mx-auto max-w-7xl px-6 py-4 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:pt-40">
+        <div className="mx-auto max-w-7xl px-6 py-4 sm:pt-32 sm:pb-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:pt-40">
           <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow  flex justify-center relative">
             <img
               className="block w-[500px] z-10"

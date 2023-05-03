@@ -1,13 +1,14 @@
 import Link from "next/link";
-
+import { AnimatedSequence } from "@/components/AnimatedSequence";
 export default function HeroSection() {
   return (
     <div className="lg:mt-[-100px]">
       <div className="relative isolate pt-5">
         <div className="mx-auto max-w-7xl px-6 py-4 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:pt-40">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+            <AnimatedSequence />
             <div className="relative">
-              <h1 className="relative z-10 mt-10 max-w-lg text-4xl font-bold tracking-tight text-primary sm:text-6xl">
+              <h1 className="relative z-10 mt-2 max-w-lg text-4xl font-bold tracking-tight text-primary sm:text-6xl">
                 Selective Capital
               </h1>
               <div className="absolute top-[-20px] left-[-40px] z-0">
