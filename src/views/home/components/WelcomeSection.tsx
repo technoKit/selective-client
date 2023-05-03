@@ -1,3 +1,39 @@
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { ReactNode } from "react";
+
+// component that slides up when in view using framer motion
+const SlideUpComponent = ({
+  children,
+  duration,
+}: {
+  children: ReactNode;
+  duration: number;
+}) => {
+  const [ref, inView] = useInView({
+    // triggerOnce: true,
+    rootMargin: "-50px 0px",
+  });
+
+  const variants = {
+    hidden: { opacity: 0, y: 150 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      transition={{ duration: duration ?? 0.5 }}
+      className="z-10"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 const items = [
   {
     id: 1,
@@ -30,42 +66,45 @@ export default function Example() {
           Welcome to Selective Capital Where
         </p>
       </div>
-      <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 relative">
-        {items.map((item) => (
-          <article
-            key={item.id}
-            className="flex flex-col items-start justify-between relative z-10"
-          >
-            <div className="relative w-full z-10">
-              <div className="z-10 bg-white w-full rounded-3xl aspect-[5/4] object-cover sm:aspect-[5/1]  lg:aspect-[5/3] shadow-lg overflow-hidden">
-                <div className=" w-full h-full flex">
-                  <div className="h-full w-28  ">
-                    <img
-                      className="block h-11 w-auto ml-auto mt-8"
-                      src={item.imageUrl}
-                      alt="Your Company"
-                    />
-                  </div>
-                  <div className="h-full w-full px-3">
-                    <div className="text-lg mt-7 font-bold mb-4">
-                      {item.title}
+      <div className="relative">
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3  overflow-hidden">
+          {items.map((item, index) => (
+            <SlideUpComponent key={item.id} duration={(index + 1) * 0.3}>
+              <article
+                key={item.id}
+                className="flex flex-col items-start justify-between relative z-10"
+              >
+                <div className="relative w-full z-10">
+                  <div className="z-10 bg-white w-full rounded-3xl aspect-[5/4] object-cover sm:aspect-[5/1]  lg:aspect-[5/3] shadow-lg overflow-hidden">
+                    <div className=" w-full h-full flex">
+                      <div className="h-full w-28  ">
+                        <img
+                          className="block h-11 w-auto ml-auto mt-8"
+                          src={item.imageUrl}
+                          alt="Your Company"
+                        />
+                      </div>
+                      <div className="h-full w-full px-3">
+                        <div className="text-lg mt-7 font-bold mb-4">
+                          {item.title}
+                        </div>
+                        <div>{item.text}</div>
+                      </div>
+                      <div className="h-full w-24 relative">
+                        <img
+                          className="block h-20 w-auto mt-auto ml-auto absolute bottom-0 right-0"
+                          src="./images/welcome/Group 5.svg"
+                          alt="Your Company"
+                        />
+                      </div>
                     </div>
-                    <div>{item.text}</div>
                   </div>
-                  <div className="h-full w-24 relative">
-                    <img
-                      className="block h-20 w-auto mt-auto ml-auto absolute bottom-0 right-0"
-                      src="./images/welcome/Group 5.svg"
-                      alt="Your Company"
-                    />
-                  </div>
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
-              </div>
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-            </div>
-          </article>
-        ))}
-
+              </article>
+            </SlideUpComponent>
+          ))}
+        </div>
         <div className="absolute top-[-70px] left-[200px] z-0">
           <img
             className="block w-[100px] z-0"
