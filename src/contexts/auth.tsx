@@ -50,6 +50,32 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     loadUserFromCookies();
   }, []);
 
+  // ***** This function is used for signup using email authentication. you need to activate email authentication in admin panel to use it.
+  ////------------------------------------------------------------------------------------------------------------------------
+  // const signUp = async (userName: string, email: string, password: string) => {
+  //   try {
+  //     setSignupError(null);
+  //     setSignupLoading(true);
+  //     const results = await api.post("auth/local/register", {
+  //       username: userName,
+  //       email,
+  //       password,
+  //     });
+  //     console.log("results :>> ", results);
+  //     router.push("/confirm-email");
+  //     console.log("user :>> ", user);
+  //     setSignupLoading(false);
+  //   } catch (error) {
+  //     // @ts-ignore
+  //     console.log("signup error > ", error?.response?.data?.error?.message);
+  //     setSignupLoading(false);
+  //     setSignupError(
+  //       // @ts-ignore
+  //       error?.response?.data?.error?.message ?? "Something went wrong"
+  //     );
+  //   }
+  // };
+
   const signUp = async (userName: string, email: string, password: string) => {
     try {
       setSignupError(null);
@@ -60,8 +86,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         password,
       });
       console.log("results :>> ", results);
-      router.push("/confirm-email");
-      console.log("user :>> ", user);
+      let jwt = results.data.jwt;
+      let user = results.data.user;
+      if (jwt) {
+        console.log("Got jwt");
+        Cookies.set("jwt", jwt, { expires: 60 });
+        api.defaults.headers.Authorization = `Bearer ${jwt}`;
+        setUser(user);
+        console.log("Got user", user);
+      }
+      router.push("/");
       setSignupLoading(false);
     } catch (error) {
       // @ts-ignore

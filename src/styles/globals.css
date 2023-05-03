@@ -7,7 +7,6 @@
 .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
   border-color: white !important;
 }
-
 .ck-reset_all :not(.ck-reset_all-excluded *),
 .ck.ck-reset_all {
   height: 0 !important;
