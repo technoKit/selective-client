@@ -1,5 +1,41 @@
 import Link from "next/link";
 import { AnimatedSequence } from "@/components/AnimatedSequence";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
+
+// component that slides up when in view using framer motion
+const ScaleUpComponent = ({
+  children,
+  duration,
+}: {
+  children: ReactNode;
+  duration?: number;
+}) => {
+  const [ref, inView] = useInView({
+    // triggerOnce: true,
+    rootMargin: "-50px 0px",
+  });
+
+  const variants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      transition={{ duration: duration ?? 1 }}
+      className="z-10"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 export default function HeroSection() {
   return (
     <div className="lg:mt-[-100px]">
@@ -18,6 +54,7 @@ export default function HeroSection() {
                   alt="Your Company"
                 />
               </div>
+
               <div className="absolute bottom-[-500px] left-[-250px] z-0">
                 <img
                   className="block w-[200px] z-0"
@@ -54,11 +91,14 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow  flex justify-center relative">
-            <img
-              className="block w-[600px] z-10"
-              src="./images/hero/heroImage.png"
-              alt="Your Company"
-            />
+            <ScaleUpComponent>
+              <img
+                className="block w-[600px] z-10"
+                src="./images/hero/heroImage.png"
+                alt="Your Company"
+              />
+            </ScaleUpComponent>
+
             <div className="absolute bottom-[20px] left-[-20px] z-0">
               <img
                 className="block w-[100px] z-0"
