@@ -47,13 +47,13 @@ export default function HeroSection() {
               <h1 className="relative z-10 mt-2 max-w-lg text-4xl font-bold tracking-tight text-primary sm:text-6xl">
                 Selective Capital
               </h1>
-              <div className="absolute top-[-20px] left-[-40px] z-0">
+              {/* <div className="absolute top-[-20px] left-[-40px] z-0">
                 <img
                   className="block w-[100px] z-0"
                   src="./images/hero/Group 3.svg"
                   alt="Your Company"
                 />
-              </div>
+              </div> */}
 
               <div className="absolute bottom-[-500px] left-[-250px] z-0">
                 <img
