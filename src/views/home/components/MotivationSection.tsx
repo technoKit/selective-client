@@ -9,7 +9,7 @@ export default function HeroSection() {
           <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow  flex justify-center relative">
             <img
               className="block w-[500px] z-10"
-              src="./images/motivation/Group 35.svg"
+              src="/images/motivation/Group 35.svg"
               alt="Your Company"
             />
           </div>
@@ -29,7 +29,7 @@ export default function HeroSection() {
               <div>
                 <img
                   className="block w-[20px] z-10"
-                  src="./images/motivation/Group 6.svg"
+                  src="/images/motivation/Group 6.svg"
                   alt="Your Company"
                 />
               </div>
@@ -42,7 +42,7 @@ export default function HeroSection() {
               <div>
                 <img
                   className="block w-[20px] z-10"
-                  src="./images/motivation/Group 6.svg"
+                  src="/images/motivation/Group 6.svg"
                   alt="Your Company"
                 />
               </div>
@@ -55,7 +55,7 @@ export default function HeroSection() {
               <div className="relative right-[-55px]">
                 <img
                   className="block w-[60px] z-10"
-                  src="./images/motivation/image 14.svg"
+                  src="/images/motivation/image 14.svg"
                   alt="Your Company"
                 />
               </div>

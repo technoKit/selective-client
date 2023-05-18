@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
@@ -19,8 +18,6 @@ import { Project } from "@/types";
 import Link from "next/link";
 import { AnyARecord } from "dns";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function SingleProjectsView({
   projects,

@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import HeroSection from "./components/HeroSection";
 import WelcomeSection from "./components/WelcomeSection";
 import MotivationSection from "./components/MotivationSection";
@@ -7,8 +6,6 @@ import CompetitiveAdvantageSection from "./components/CompetitiveAdvantageSectio
 import OurPartnersSection from "./components/OurPartners";
 
 import { Project } from "@/types";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function HomeView({ projects }: { projects: Project[] | null }) {
   console.log("projects :>> ", projects);

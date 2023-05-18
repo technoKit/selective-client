@@ -1,8 +1,6 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
-import SingleProjectView from "@/views/projects/singleProject";
 
-const inter = Inter({ subsets: ["latin"] });
+import SingleProjectView from "@/views/projects/singleProject";
 
 //types imports
 import { Project } from "@/types";

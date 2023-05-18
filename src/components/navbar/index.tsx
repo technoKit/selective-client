@@ -32,8 +32,13 @@ export default function Navbar() {
           key={item.name}
           href={item.href}
           className={cn(
-            "inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium md:mx-4 text-gray-900",
-            { "border-primary-light": router.pathname === item.href }
+            "inline-flex items-center px-1 pt-1 text-md font-medium md:mx-4 border-b-4",
+            {
+              "border-secondary text-secondary ": router.pathname === item.href,
+            },
+            {
+              "text-white border-primary  ": router.pathname !== item.href,
+            }
           )}
         >
           {item.name}
@@ -51,7 +56,7 @@ export default function Navbar() {
           href={item.href}
           className={cn(
             {
-              "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6":
+              "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-white hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6":
                 router.pathname !== item.href,
             },
             {
@@ -67,11 +72,11 @@ export default function Navbar() {
   };
 
   return (
-    <Disclosure as="nav" className="bg-white shadow sticky top-0 z-40">
+    <Disclosure as="nav" className="bg-primary shadow sticky top-0 z-40">
       {({ open }: { open: boolean }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex h-16 justify-between">
+            <div className="flex h-20 justify-between">
               <div className="flex">
                 <div className="-ml-2 mr-2 flex items-center md:hidden">
                   {/* Mobile menu button */}
@@ -86,12 +91,12 @@ export default function Navbar() {
                 </div>
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="block h-11 w-auto lg:hidden"
+                    className="block h-16 w-auto lg:hidden"
                     src="/logo.png"
                     alt="Your Company"
                   />
                   <img
-                    className="hidden h-11 w-auto lg:block"
+                    className="hidden h-16 w-auto lg:block"
                     src="/logo.png"
                     alt="Your Company"
                   />
@@ -103,12 +108,15 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="flex items-center">
+                <div className="md:mx-5 hidden md:block">
+                  <LanguageDropdown />
+                </div>
                 {!isAuthenticated && (
                   <>
                     <div className="flex-shrink-0">
                       <button
                         type="button"
-                        className="relative inline-flex items-center gap-x-1.5 rounded-3xl px-5 py-2 text-sm font-semibold text-primary hover:text-white shadow-sm hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary border-primary border mr-4"
+                        className="relative inline-flex items-center gap-x-1.5 rounded-3xl px-5 py-2 text-sm font-semibold text-white hover:text-white shadow-sm hover:bg-primary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary border-white border mx-3"
                       >
                         <Link href={"/sign-in"}>Sign In</Link>
                       </button>
@@ -117,7 +125,7 @@ export default function Navbar() {
                       <Link href={"/sign-up"}>
                         <button
                           type="button"
-                          className="relative inline-flex items-center gap-x-1.5 rounded-3xl  px-5 py-2 text-sm font-semibold text-primary hover:text-white shadow-sm bg-secondary hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary border-primary"
+                          className="relative inline-flex items-center gap-x-1.5 rounded-3xl  px-5 py-2 text-sm font-semibold text-primary hover:text-primary shadow-sm bg-secondary hover:bg-secondary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary border-primary"
                         >
                           sign up
                         </button>
@@ -125,9 +133,7 @@ export default function Navbar() {
                     </div>
                   </>
                 )}
-                <div className="md:ml-8">
-                  <LanguageDropdown />
-                </div>
+
                 <div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
                   {/* Profile dropdown */}
                   {isAuthenticated && (
@@ -176,9 +182,7 @@ export default function Navbar() {
                                     "block px-4 py-2 text-sm text-gray-700"
                                   )}
                                   onClick={() => {
-                                    console.log("ssss");
                                     if (!logout) return;
-                                    console.log("first");
                                     logout();
                                   }}
                                 >
@@ -197,9 +201,14 @@ export default function Navbar() {
           </div>
 
           {
-            <Disclosure.Panel className="md:hidden">
+            <Disclosure.Panel className="md:hidden pb-1">
               <div className="space-y-1 pb-3 pt-2">
                 {renderMobileNavigation()}
+              </div>
+              <div className="mb-4 w-full flex">
+                <div className="ml-auto mr-4 ">
+                  <LanguageDropdown />
+                </div>
               </div>
               {isAuthenticated && (
                 <div className="border-t border-gray-200 pb-3 pt-4">
@@ -212,10 +221,10 @@ export default function Navbar() {
                       />
                     </div>
                     <div className="ml-3">
-                      <div className="text-base font-medium text-gray-800">
+                      <div className="text-base font-medium text-gray-300">
                         {user?.username}
                       </div>
-                      <div className="text-sm font-medium text-gray-500">
+                      <div className="text-sm font-medium text-white">
                         {user?.email}
                       </div>
                     </div>

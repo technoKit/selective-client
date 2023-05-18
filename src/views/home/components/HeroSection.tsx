@@ -50,7 +50,7 @@ export default function HeroSection() {
               {/* <div className="absolute top-[-20px] left-[-40px] z-0">
                 <img
                   className="block w-[100px] z-0"
-                  src="./images/hero/Group 3.svg"
+                  src="/images/hero/Group 3.svg"
                   alt="Your Company"
                 />
               </div> */}
@@ -58,7 +58,7 @@ export default function HeroSection() {
               <div className="absolute bottom-[-500px] left-[-250px] z-0">
                 <img
                   className="block w-[200px] z-0"
-                  src="./images/hero/Group 13.svg"
+                  src="/images/hero/Group 13.svg"
                   alt="Your Company"
                 />
               </div>
@@ -94,7 +94,7 @@ export default function HeroSection() {
             <ScaleUpComponent>
               <img
                 className="block w-[600px] z-10"
-                src="./images/hero/heroImage.png"
+                src="/images/hero/heroImage.png"
                 alt="Your Company"
               />
             </ScaleUpComponent>
@@ -102,7 +102,7 @@ export default function HeroSection() {
             <div className="absolute bottom-[20px] left-[-20px] z-0">
               <img
                 className="block w-[100px] z-0"
-                src="./images/hero/temple.png"
+                src="/images/hero/temple.png"
                 alt="Your Company"
               />
             </div>

@@ -1,21 +1,21 @@
 const cards = [
   {
     id: 1,
-    iconURL: "./images/competitive_advantage/hand.svg",
+    iconURL: "/images/competitive_advantage/hand.svg",
     content:
       "Our selective approach means we offer exclusive access to real estate investment opportunities that provide unmatched potential for building long-term wealth.",
     backgroundColor: "#E1E4E8",
   },
   {
     id: 2,
-    iconURL: "./images/competitive_advantage/checkMark.svg",
+    iconURL: "/images/competitive_advantage/checkMark.svg",
     content:
       "Our platform utilizes cutting-edge security measures and efficient investment processes, ensuring that investors can confidently invest in real estate opportunities from anywhere in the world with ease and security.",
     backgroundColor: "#FFECC7",
   },
   {
     id: 3,
-    iconURL: "./images/competitive_advantage/chart.svg",
+    iconURL: "/images/competitive_advantage/chart.svg",
     content:
       "Our platform operates with full transparency and compliance, ensuring that investors can confidently invest in international real estate opportunities without worrying about legal or regulatory hurdles.",
     backgroundColor: "#E1E4E8",
@@ -29,13 +29,13 @@ export default function CompetitiveAdvantageSection() {
         <div className="text-center flex flex-col items-center">
           <div className="w-full flex justify-end  mt-[-65px]">
             <img
-              src="./images/competitive_advantage/bird.svg"
+              src="/images/competitive_advantage/bird.svg"
               alt="location icon"
               className=" w-14 mr-[-6px] mb-[-25px]"
             />
           </div>
           <img
-            src="./images/competitive_advantage/templeGate.svg"
+            src="/images/competitive_advantage/templeGate.svg"
             alt="location icon"
             className=" absolute w-14 left-0 top-14"
           />

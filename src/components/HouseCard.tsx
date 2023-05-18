@@ -20,7 +20,7 @@ function HouseCard({ data }: { data: Project }) {
         <img
           src={
             project?.main_image?.data.attributes.url ||
-            "./images/projects/house.jpg"
+            "/images/projects/house.jpg"
           }
           alt="house image"
           className={`aspect-[16/9] w-full rounded-t-[30px] bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[10/6]`}
@@ -37,7 +37,7 @@ function HouseCard({ data }: { data: Project }) {
           </h3>
           <h3 className="mt-1 line-clamp-3 text-md leading-6 text-primary flex flex-row items-center">
             <img
-              src="./images/projects/location.svg"
+              src="/images/projects/location.svg"
               alt="location icon"
               className="w-3.5 ml-1 mr-2"
             />

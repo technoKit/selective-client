@@ -39,19 +39,19 @@ const items = [
     id: 1,
     title: "Building your real estate wealth is an art form.",
     text: "Done by the most experienced experts in the field of real estate.",
-    imageUrl: "./images/welcome/image 3.svg",
+    imageUrl: "/images/welcome/image 3.svg",
   },
   {
     id: 2,
     title: "We're picky about the opportunities",
     text: "We bring to our intelligent investors, ensuring that every investment is a masterpiece..",
-    imageUrl: "./images/welcome/image 4.svg",
+    imageUrl: "/images/welcome/image 4.svg",
   },
   {
     id: 3,
     title: "You can make selective investments",
     text: "With our platform, and paint a beautiful future for yourself in the world of real estate.",
-    imageUrl: "./images/welcome/image 5.svg",
+    imageUrl: "/images/welcome/image 5.svg",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function Example() {
                       <div className="h-full w-24 relative">
                         <img
                           className="block h-20 w-auto mt-auto ml-auto absolute bottom-0 right-0"
-                          src="./images/welcome/Group 5.svg"
+                          src="/images/welcome/Group 5.svg"
                           alt="Your Company"
                         />
                       </div>
@@ -108,14 +108,14 @@ export default function Example() {
         <div className="absolute top-[-70px] left-[200px] z-0">
           <img
             className="block w-[100px] z-0"
-            src="./images/welcome/Group 6.svg"
+            src="/images/welcome/Group 6.svg"
             alt="Your Company"
           />
         </div>
         <div className="absolute top-[-100px] right-[-30px] z-0">
           <img
             className="block w-[100px] z-0"
-            src="./images/welcome/Group 4.svg"
+            src="/images/welcome/Group 4.svg"
             alt="Your Company"
           />
         </div>

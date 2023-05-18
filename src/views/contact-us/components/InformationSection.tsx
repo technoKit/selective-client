@@ -28,7 +28,7 @@ export default function InformationSection() {
         <div className="text-center flex flex-col items-center">
           {/* <div className="w-full flex justify-end  mt-[-65px]">
             <img
-              src="./images/competitive_advantage/bird.svg"
+              src="/images/competitive_advantage/bird.svg"
               alt="location icon"
               className=" w-14 mr-[-6px] mb-[-25px]"
             />

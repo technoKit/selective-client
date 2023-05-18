@@ -51,7 +51,7 @@ export default function ProjectsSection({
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
         <div className="text-center flex flex-col items-center">
           <img
-            src="./images/projects/sphinx.svg"
+            src="/images/projects/sphinx.svg"
             alt="location icon"
             className=" w-20 ml-1 mr-2 mb-[-14px] mt-[-45px]"
           />
@@ -64,13 +64,13 @@ export default function ProjectsSection({
         </div>
 
         <img
-          src="./images/projects/temple.svg"
+          src="/images/projects/temple.svg"
           alt="location icon"
           className="absolute top-24 left-[-25px] w-20 ml-1 mr-2"
         />
 
         <img
-          src="./images/projects/waves.svg"
+          src="/images/projects/waves.svg"
           alt="location icon"
           className="absolute top-72 right-[-25px] w-24 ml-1 mr-2"
         />

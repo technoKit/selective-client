@@ -1,15 +1,15 @@
 const cards = [
   {
     id: 1,
-    imageURL: "./images/our_partners/getGround.svg",
+    imageURL: "/images/our_partners/getGround.svg",
   },
   {
     id: 2,
-    imageURL: "./images/our_partners/infinity.svg",
+    imageURL: "/images/our_partners/infinity.svg",
   },
   {
     id: 3,
-    imageURL: "./images/our_partners/atai.svg",
+    imageURL: "/images/our_partners/atai.svg",
   },
 ];
 
@@ -19,7 +19,7 @@ export default function OurPartnersSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-between items-center md:flex-row">
         <div className="flex flex-col md:items-start items-center justify-center">
           <img
-            src="./images/our_partners/pyramids.svg"
+            src="/images/our_partners/pyramids.svg"
             alt="location icon"
             className="w-16 mb-[-27px] mt-[-30px] ml-[-33px]"
           />
@@ -41,7 +41,7 @@ export default function OurPartnersSection() {
           ))}
         </div>
         <img
-          src="./images/our_partners/waves.svg"
+          src="/images/our_partners/waves.svg"
           alt="location icon"
           className="w-24 absolute z-0 right-[-45px] top-[250px] md:top-[-40px]"
         />

@@ -8,9 +8,15 @@ import { useRouter } from "next/router";
 //third party imports
 import { appWithTranslation } from "next-i18next";
 import axios from "axios";
+import { Inter } from "@next/font/google";
 
 //types imports
 import { Project } from "@/types";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 function App({ Component, pageProps }: AppProps) {
   const baseURL = `${process.env.NEXT_PUBLIC_BASE_URL}/projects?populate=*`;
@@ -41,15 +47,17 @@ function App({ Component, pageProps }: AppProps) {
   }, [router.locale]);
 
   return (
-    <AuthProvider>
-      <Layout>
-        <Component
-          {...pageProps}
-          loadingProjects={loadingProjects}
-          projects={projects}
-        />
-      </Layout>
-    </AuthProvider>
+    <main className={`${inter.variable} font-sans`}>
+      <AuthProvider>
+        <Layout>
+          <Component
+            {...pageProps}
+            loadingProjects={loadingProjects}
+            projects={projects}
+          />
+        </Layout>
+      </AuthProvider>
+    </main>
   );
 }
 
