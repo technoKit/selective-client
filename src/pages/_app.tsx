@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Layout from "@/components/layout";
 import { AuthProvider } from "@/contexts/auth";
+import { useRouter } from "next/router";
 
 //third party imports
+import { appWithTranslation } from "next-i18next";
 import axios from "axios";
 
 //types imports
 import { Project } from "@/types";
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   const baseURL = `${process.env.NEXT_PUBLIC_BASE_URL}/projects?populate=*`;
 
   const [projects, setProjects] = useState<Project[] | null>(null);
@@ -26,6 +28,18 @@ export default function App({ Component, pageProps }: AppProps) {
     });
   }, []);
 
+  const router = useRouter();
+
+  useEffect(() => {
+    if (document && document?.querySelector("html")) {
+      let dir = router.locale === "ar" ? "rtl" : "ltr";
+      let lang = router.locale === "ar" ? "ar" : "en";
+
+      document.querySelector("html")?.setAttribute("dir", dir);
+      document.querySelector("html")?.setAttribute("lang", lang);
+    }
+  }, [router.locale]);
+
   return (
     <AuthProvider>
       <Layout>
@@ -38,3 +52,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </AuthProvider>
   );
 }
+
+export default appWithTranslation(App);

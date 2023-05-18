@@ -4,7 +4,9 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import cn from "classnames";
-import { useAuth } from "../contexts/auth";
+import { useAuth } from "../../contexts/auth";
+import LanguageDropdown from "@/components/navbar/LanguageDropdown";
+import { useTranslation } from "next-i18next";
 
 function classNames(...classes: (string | undefined)[]) {
   return classes.filter(Boolean).join(" ");
@@ -17,6 +19,8 @@ const navigation = [
 ];
 
 export default function Navbar() {
+  const { t } = useTranslation();
+
   const router = useRouter();
   const { signUp, signupError, signupLoading, isAuthenticated, logout, user } =
     useAuth();
@@ -28,7 +32,7 @@ export default function Navbar() {
           key={item.name}
           href={item.href}
           className={cn(
-            "inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900",
+            "inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium md:mx-4 text-gray-900",
             { "border-primary-light": router.pathname === item.href }
           )}
         >
@@ -92,9 +96,10 @@ export default function Navbar() {
                     alt="Your Company"
                   />
                 </div>
-                <div className="hidden md:ml-6 md:flex md:space-x-8">
+                <div className="hidden md:mx-6 md:flex">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   {renderNavigation()}
+                  {/* <h1>{t("HELLO_WORLD")}</h1> */}
                 </div>
               </div>
               <div className="flex items-center">
@@ -120,6 +125,9 @@ export default function Navbar() {
                     </div>
                   </>
                 )}
+                <div className="md:ml-8">
+                  <LanguageDropdown />
+                </div>
                 <div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
                   {/* Profile dropdown */}
                   {isAuthenticated && (

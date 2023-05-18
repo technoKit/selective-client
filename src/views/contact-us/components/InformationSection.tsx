@@ -1,20 +1,20 @@
 const cards = [
   {
     id: 1,
-    iconURL: "./images/contact_us/location.svg",
+    iconURL: "/images/contact_us/location.svg",
     firstContent: "5075 Main Road, D- Block,",
     secondContent: "2nd Floor, New York",
     backgroundColor: "#E1E4E8",
   },
   {
     id: 2,
-    iconURL: "./images/contact_us/phone.svg",
+    iconURL: "/images/contact_us/phone.svg",
     firstContent: "+012 (345) 689 37",
     backgroundColor: "#E1E4E8",
   },
   {
     id: 3,
-    iconURL: "./images/contact_us/mail.svg",
+    iconURL: "/images/contact_us/mail.svg",
     firstContent: "supportinfo@gmail.com",
     secondContent: "www.funden.com",
     backgroundColor: "#E1E4E8",
@@ -34,7 +34,7 @@ export default function InformationSection() {
             />
           </div> */}
           <img
-            src="./images/competitive_advantage/templeGate.svg"
+            src="/images/competitive_advantage/templeGate.svg"
             alt="location icon"
             className=" absolute w-14 left-0 top-14"
           />
