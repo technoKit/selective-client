@@ -15,7 +15,7 @@ const cards = [
 
 export default function OurPartnersSection() {
   return (
-    <div className="bg-slate-100 py-20 sm:pb-24 overflow-x-hidden	">
+    <div className=" py-20 sm:pb-24 overflow-x-hidden	">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-between items-center md:flex-row">
         <div className="flex flex-col md:items-start items-center justify-center">
           <img

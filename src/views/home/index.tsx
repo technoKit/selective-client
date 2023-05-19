@@ -4,7 +4,7 @@ import MotivationSection from "./components/MotivationSection";
 import ProjectsSection from "./components/ProjectsSection";
 import CompetitiveAdvantageSection from "./components/CompetitiveAdvantageSection";
 import OurPartnersSection from "./components/OurPartners";
-
+import HowItWorks from "./components/HowItWorksSection";
 import { Project } from "@/types";
 
 export default function HomeView({ projects }: { projects: Project[] | null }) {
@@ -23,6 +23,7 @@ export default function HomeView({ projects }: { projects: Project[] | null }) {
       <ProjectsSection projects={projects} />
       <CompetitiveAdvantageSection />
       <OurPartnersSection />
+      <HowItWorks />
     </main>
   );
 }
