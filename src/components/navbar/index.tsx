@@ -13,9 +13,9 @@ function classNames(...classes: (string | undefined)[]) {
 }
 
 const navigation = [
-  { name: "Home", href: "/", current: false },
-  { name: "Projects", href: "/projects", current: false },
-  { name: "Contact Us", href: "/contact-us", current: false },
+  { name: "nav.home", href: "/", current: false },
+  { name: "nav.projects", href: "/projects", current: false },
+  { name: "nav.contact", href: "/contact-us", current: false },
 ];
 
 export default function Navbar() {
@@ -41,7 +41,7 @@ export default function Navbar() {
             }
           )}
         >
-          {item.name}
+          {t(item.name)}
         </Link>
       );
     });
@@ -118,7 +118,7 @@ export default function Navbar() {
                         type="button"
                         className="relative inline-flex items-center gap-x-1.5 rounded-3xl px-5 py-2 text-sm font-semibold text-white hover:text-white shadow-sm hover:bg-primary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary border-white border mx-3"
                       >
-                        <Link href={"/sign-in"}>Sign In</Link>
+                        <Link href={"/sign-in"}> {t("nav.sign-in")}</Link>
                       </button>
                     </div>
                     <div className="flex-shrink-0">
@@ -127,7 +127,7 @@ export default function Navbar() {
                           type="button"
                           className="relative inline-flex items-center gap-x-1.5 rounded-3xl  px-5 py-2 text-sm font-semibold text-primary hover:text-primary shadow-sm bg-secondary hover:bg-secondary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary border-primary"
                         >
-                          sign up
+                          {t("nav.sign-up")}
                         </button>
                       </Link>
                     </div>
@@ -186,7 +186,7 @@ export default function Navbar() {
                                     logout();
                                   }}
                                 >
-                                  Sign out
+                                  {t("nav.sign-out")}
                                 </a>
                               )}
                             </Menu.Item>

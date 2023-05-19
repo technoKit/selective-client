@@ -1,1 +1,11 @@
-{ "HELLO_WORLD": "Hello, World!" }
+{
+  "HELLO_WORLD": "Hello, World!",
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact us",
+    "sign-in": "Sign in",
+    "sign-up": "Sign up",
+    "sign-out": "Sign out"
+  }
+}

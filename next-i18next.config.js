@@ -1,4 +1,4 @@
-// next-i18next.config.js
+/** @type {import('next-i18next').UserConfig} */
 
 module.exports = {
   i18n: {
@@ -7,5 +7,7 @@ module.exports = {
     // the default locale to be used when visiting
     // a non-localized route (e.g. `/about`)
     defaultLocale: "en",
+    keySeparator: ".",
+    fallbackLng: "en",
   },
 };
