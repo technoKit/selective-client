@@ -1,5 +1,5 @@
 {
-  "HELLO_WORLD": "Hello, World!",
+  "selective_capital": "Selective Capital",
   "nav": {
     "home": "Home",
     "projects": "Projects",
@@ -7,5 +7,21 @@
     "sign-in": "Sign in",
     "sign-up": "Sign up",
     "sign-out": "Sign out"
+  },
+  "hero": {
+    "subtitle": "A world of exclusive real estate investments.",
+    "text1": "Your gateway to global real estate opportunities.",
+    "text2": "Take your real estate investment portfolio to the next level.",
+    "cta1": "Explore Opportunities",
+    "cta2": "Contact Us"
+  },
+  "motivation": {
+    "title": "It's just ABOUT time",
+    "subtitle": "Are you ready to join us?",
+    "subtitle2": "Our platform is designed to help you make the most of your assets.",
+    "point1": "Browse our list of projects",
+    "point2": "Contact us to participate in a project",
+    "name": "Ahmed A. Sakr",
+    "position": "CEO & Founder"
   }
 }

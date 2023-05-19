@@ -1,7 +1,10 @@
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "next-i18next";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <div className="lg:mt-[-100px]">
       <div className="relative isolate pt-5">
@@ -16,14 +19,14 @@ export default function HeroSection() {
           <div className="ml-20 max-w-2xl lg:flex-auto ">
             <div className="relative">
               <h1 className="relative z-10 mt-10 max-w-lg text-4xl font-bold tracking-tight text-primary sm:text-6xl">
-                {"It's just ABOUT time"}
+                {t("motivation.title")}
               </h1>
             </div>
             <h2 className="mt-5 max-w-lg text-xl font-bold tracking-tight text-primary sm:text-2xl relative">
-              Are you ready to join us?
+              {t("motivation.subtitle")}
             </h2>
             <h2 className="mt-1  text-lg  tracking-tight text-primary  relative">
-              Our platform is designed to help you make the most of your assets.
+              {t("motivation.subtitle2")}
             </h2>
             <div className="flex mt-6">
               <div>
@@ -34,7 +37,7 @@ export default function HeroSection() {
                 />
               </div>
               <div className="text-lg leading-8 text-gray-600  ml-3">
-                Browse our list of projects
+                {t("motivation.point1")}
               </div>
             </div>
 
@@ -47,7 +50,7 @@ export default function HeroSection() {
                 />
               </div>
               <div className="text-lg leading-8 text-gray-600  ml-3">
-                Contact us to participate in a project
+                {t("motivation.point2")}
               </div>
             </div>
 
@@ -60,8 +63,8 @@ export default function HeroSection() {
                 />
               </div>
               <div className="h-18 p-1 w-52 shadow-xl rounded-full flex flex-col items-center border-2 border-slate-200 text-sm">
-                <div>Ahmed A. Sakr</div>
-                <div>CEO & Founder</div>
+                <div> {t("motivation.name")}</div>
+                <div> {t("motivation.position")}</div>
               </div>
             </div>
           </div>

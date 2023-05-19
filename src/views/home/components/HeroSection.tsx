@@ -3,6 +3,7 @@ import { AnimatedSequence } from "@/components/AnimatedSequence";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { useTranslation } from "next-i18next";
 
 // component that slides up when in view using framer motion
 const ScaleUpComponent = ({
@@ -37,6 +38,8 @@ const ScaleUpComponent = ({
 };
 
 export default function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <div className="lg:mt-[-100px]">
       <div className="relative isolate pt-5">
@@ -47,7 +50,7 @@ export default function HeroSection() {
             </div>
             <div className="relative">
               <h1 className="relative z-10 mt-2 max-w-lg text-4xl font-bold tracking-tight text-primary sm:text-6xl">
-                Selective Capital
+                {t("selective_capital")}
               </h1>
               {/* <div className="absolute top-[-20px] left-[-40px] z-0">
                 <img
@@ -66,14 +69,12 @@ export default function HeroSection() {
               </div>
             </div>
             <h2 className="mt-5 max-w-lg text-xl font-bold tracking-tight text-primary sm:text-2xl relative">
-              A world of exclusive real estate investments.
+              {t("hero.subtitle")}
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Your gateway to global real estate opportunities.
+              {t("hero.text1")}
             </p>
-            <p className="text-lg leading-8 text-gray-600">
-              Take your real estate investment portfolio to the next level.
-            </p>
+            <p className="text-lg leading-8 text-gray-600">{t("hero.text2")}</p>
             <div className="mt-10 flex items-center gap-x-6 ">
               <Link
                 href="/projects"
@@ -83,13 +84,14 @@ export default function HeroSection() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-light opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
                 </span>
-                Explore Opportunities
+                {t("hero.cta1")}
               </Link>
               <Link
                 href="/contact-us"
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
-                Contact us<span aria-hidden="true">→</span>
+                {t("hero.cta2")}
+                <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
