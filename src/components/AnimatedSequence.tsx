@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 
 const words = ["Investing made simple", "Wealth made possible"];
 
@@ -70,18 +71,17 @@ export const AnimatedSequence = () => {
   }, []);
 
   return (
-    <motion.div
-      style={{
-        position: "relative",
-        height: "50px",
-        display: "flex",
-        justifyContent: "start",
-        alignItems: "center",
-      }}
-      className="z-10"
-    >
-      {/* <Word key={"2"} word={words[1]} /> */}
-      <AnimatedTextCharacter key={index} text={words[index]} />
-    </motion.div>
+    <TypeAnimation
+      sequence={[
+        "Investing made simple", // Types 'One'
+        1000, // Waits 1s
+        "Wealth made possible", // Deletes 'One' and types 'Two'
+        1000, // Waits 2s
+      ]}
+      wrapper="span"
+      cursor={true}
+      repeat={Infinity}
+      style={{ fontSize: "2em", display: "inline-block" }}
+    />
   );
 };

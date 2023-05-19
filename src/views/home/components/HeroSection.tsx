@@ -71,6 +71,9 @@ export default function HeroSection() {
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Your gateway to global real estate opportunities.
             </p>
+            <p className="text-lg leading-8 text-gray-600">
+              Take your real estate investment portfolio to the next level.
+            </p>
             <div className="mt-10 flex items-center gap-x-6 ">
               <Link
                 href="/projects"

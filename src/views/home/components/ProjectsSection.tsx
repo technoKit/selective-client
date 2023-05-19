@@ -56,7 +56,7 @@ export default function ProjectsSection({
             className=" w-20 ml-1 mr-2 mb-[-14px] mt-[-45px]"
           />
           <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl ">
-            Popular Projects
+            Latest Projects
           </h2>
           <p className="mt-3 text-2xl leading-8 text-black">
             Explore our projects

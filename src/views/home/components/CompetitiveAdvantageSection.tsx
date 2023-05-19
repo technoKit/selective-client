@@ -3,28 +3,28 @@ const cards = [
     id: 1,
     iconURL: "/images/competitive_advantage/hand.svg",
     content:
-      "Our selective approach means we offer exclusive access to real estate investment opportunities that provide unmatched potential for building long-term wealth.",
+      "Transparent and Effortless Investment Process At Selective Capital, our fully digital investment process ensures that investing has never been easier",
     backgroundColor: "#E1E4E8",
   },
   {
     id: 2,
     iconURL: "/images/competitive_advantage/checkMark.svg",
     content:
-      "Our platform utilizes cutting-edge security measures and efficient investment processes, ensuring that investors can confidently invest in real estate opportunities from anywhere in the world with ease and security.",
+      "Flexible Exit Strategies While we advise our investors with a holding period that maximize their returns, we also offer the option to sell shares to  their investors on our platform, giving you the flexibility and control you need to achieve your financial goals.",
     backgroundColor: "#FFECC7",
   },
   {
     id: 3,
     iconURL: "/images/competitive_advantage/chart.svg",
     content:
-      "Our platform operates with full transparency and compliance, ensuring that investors can confidently invest in international real estate opportunities without worrying about legal or regulatory hurdles.",
+      "Professional Risk Management Our team of experienced professionals carefully evaluates each investment opportunity to deliver optimal returns with calculated risk. So, you can be sure that your investments are in safe hands with us.",
     backgroundColor: "#E1E4E8",
   },
 ];
 
 export default function CompetitiveAdvantageSection() {
   return (
-    <div className="bg-slate-100 py-24 sm:py-32">
+    <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
         <div className="text-center flex flex-col items-center">
           <div className="w-full flex justify-end  mt-[-65px]">

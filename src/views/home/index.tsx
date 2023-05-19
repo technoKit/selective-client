@@ -17,7 +17,7 @@ export default function HomeView({ projects }: { projects: Project[] | null }) {
     <main>
       <div className="bg-slate-100 pb-5">
         <HeroSection />
-        <WelcomeSection />
+        {/* <WelcomeSection /> */}
       </div>
       <MotivationSection />
       <ProjectsSection projects={projects} />
