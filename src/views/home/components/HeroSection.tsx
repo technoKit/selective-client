@@ -42,7 +42,9 @@ export default function HeroSection() {
       <div className="relative isolate pt-5">
         <div className="mx-auto max-w-7xl px-6 py-4 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:pt-40">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-            <AnimatedSequence />
+            <div className="hidden md:block">
+              <AnimatedSequence />
+            </div>
             <div className="relative">
               <h1 className="relative z-10 mt-2 max-w-lg text-4xl font-bold tracking-tight text-primary sm:text-6xl">
                 Selective Capital
@@ -64,12 +66,10 @@ export default function HeroSection() {
               </div>
             </div>
             <h2 className="mt-5 max-w-lg text-xl font-bold tracking-tight text-primary sm:text-2xl relative">
-              Real Estate Investment
+              A world of exclusive real estate investments.
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Esse id magna consectetur fugiat non dolor in ad laboris magna
-              laborum ea consequat. Nisi irure aliquip nisi adipisicing veniam
-              voluptate id. In veniam incididunt ex veniam adipisicing sit.
+              Your gateway to global real estate opportunities.
             </p>
             <div className="mt-10 flex items-center gap-x-6 ">
               <Link
@@ -80,7 +80,7 @@ export default function HeroSection() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-light opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
                 </span>
-                Explore Projects
+                Explore Opportunities
               </Link>
               <Link
                 href="/contact-us"

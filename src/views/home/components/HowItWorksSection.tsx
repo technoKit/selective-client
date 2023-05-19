@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function HowItWorks() {
   return (
     <div className="bg-slate-100">
-      <section className="max-w-5xl mx-auto py-10 overflow-hidden ">
+      <section className="max-w-4xl mx-auto py-10 overflow-hidden ">
         <div className="mx-auto max-w-2xl text-center mb-28 mt-20">
           <h2 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
             How It works
@@ -24,7 +24,7 @@ export default function HowItWorks() {
               </div>
             </div>
             <motion.div
-              initial={{ x: "50vw" }}
+              initial={{ x: "25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
               className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8 "
@@ -73,7 +73,7 @@ export default function HowItWorks() {
               </div>
             </div>
             <motion.div
-              initial={{ x: "-50vw" }}
+              initial={{ x: "-25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
               className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"
@@ -120,7 +120,7 @@ export default function HowItWorks() {
               </div>
             </div>
             <motion.div
-              initial={{ x: "50vw" }}
+              initial={{ x: "25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
               className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"
@@ -168,7 +168,7 @@ export default function HowItWorks() {
               </div>
             </div>
             <motion.div
-              initial={{ x: "-50vw" }}
+              initial={{ x: "-25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
               className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"
@@ -217,7 +217,7 @@ export default function HowItWorks() {
               </div>
             </div>
             <motion.div
-              initial={{ x: "50vw" }}
+              initial={{ x: "25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
               className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"
@@ -261,7 +261,7 @@ export default function HowItWorks() {
               </div>
             </div>
             <motion.div
-              initial={{ x: "-50vw" }}
+              initial={{ x: "-25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
               className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"

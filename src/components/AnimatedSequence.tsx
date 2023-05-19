@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 
-const words = ["100% safe", "Easy Exit", "Carefully selected", "High returns"];
+const words = ["Investing made simple", "Wealth made possible"];
 
 const AnimatedTextCharacter = ({ text }: { text: string }) => {
   // splitting text into letters
