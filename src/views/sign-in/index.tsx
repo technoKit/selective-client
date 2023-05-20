@@ -102,7 +102,7 @@ export default function SignInView() {
                   <div className="relative mt-5 rounded-3xl shadow-sm ">
                     <button
                       onClick={handleSubmit(onSubmit)}
-                      className="h-16 block w-full rounded-full border-0 py-1.5  text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary hover:bg-primary-light sm:text-sm sm:leading-6 bg-primary "
+                      className="h-16 block w-full rounded-full border-0 py-1.5 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary hover:bg-primary-light sm:text-sm sm:leading-6 bg-primary "
                     >
                       <div className="text-2xl"> {t("sign_in.sign_in")}</div>
                     </button>
