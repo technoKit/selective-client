@@ -3,6 +3,7 @@ import { UserCircleIcon } from "@heroicons/react/20/solid";
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { useAuth } from "@/contexts/auth";
+import { useTranslation } from "next-i18next";
 
 import { useForm } from "react-hook-form";
 import Router, { useRouter } from "next/router";
@@ -13,6 +14,8 @@ type FormValues = {
 };
 
 export default function SignInView() {
+  const { t } = useTranslation();
+
   const { login, loginError, loginLoading, user } = useAuth();
 
   const {
@@ -48,16 +51,16 @@ export default function SignInView() {
               <div className="w-[80%]">
                 <div className="w-ful">
                   <h5 className="relative z-10 mb-5 max-w-lg text-4xl font-bold tracking-tight text-primary sm:text-5xl text-start w-full ">
-                    Sign In
+                    {t("sign_in.sign_in")}
                   </h5>
                   <div className="flex">
                     <h1 className="relative z-10 max-w-lg text-lg tracking-tight text-slate-400 sm:text-xl text-start ">
-                      {"don't have an account?"}
+                      {t("sign_in.no_account")}
                     </h1>
                     <span>
                       <Link href={"/sign-up"}>
                         <h1 className=" ml-3 relative z-10 max-w-lg text-lg tracking-tight text-secondary sm:text-xl text-start ">
-                          {"Sign Up"}
+                          {t("sign_in.sign_up")}
                         </h1>
                       </Link>
                     </span>
@@ -101,7 +104,7 @@ export default function SignInView() {
                       onClick={handleSubmit(onSubmit)}
                       className="h-16 block w-full rounded-full border-0 py-1.5  text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary hover:bg-primary-light sm:text-sm sm:leading-6 bg-primary "
                     >
-                      <div className="text-2xl"> Sign In</div>
+                      <div className="text-2xl"> {t("sign_in.sign_in")}</div>
                     </button>
                   </div>
                 </div>

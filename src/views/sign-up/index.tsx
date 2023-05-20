@@ -6,6 +6,7 @@ import { useAuth } from "@/contexts/auth";
 
 import { useForm } from "react-hook-form";
 import Router, { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 type FormValues = {
   email: string;
@@ -14,6 +15,7 @@ type FormValues = {
 };
 
 export default function SignUpView() {
+  const { t } = useTranslation();
   const { signupError, signupLoading, signUp, user } = useAuth();
 
   const {
@@ -51,16 +53,16 @@ export default function SignUpView() {
               <div className="w-[80%]">
                 <div className="w-ful">
                   <h5 className="relative z-10 mb-5 max-w-lg text-4xl font-bold tracking-tight text-primary sm:text-5xl text-start w-full ">
-                    Sign up
+                    {t("sign_up.sign_up")}
                   </h5>
                   <div className="flex">
                     <h1 className="relative z-10 max-w-lg text-lg tracking-tight text-slate-400 sm:text-xl text-start ">
-                      {"Already have an account?"}
+                      {t("sign_up.have_account")}
                     </h1>
                     <span>
                       <Link href={"/sign-in"}>
                         <h1 className=" ml-3 relative z-10 max-w-lg text-lg tracking-tight text-secondary sm:text-xl text-start ">
-                          {"Sign in"}
+                          {t("sign_up.sign_in")}
                         </h1>
                       </Link>
                     </span>
@@ -142,7 +144,7 @@ export default function SignUpView() {
                           onClick={handleSubmit(onSubmit)}
                           className="h-16 block w-full rounded-full border-0 py-1.5  text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary hover:bg-primary-light sm:text-sm sm:leading-6 bg-primary "
                         >
-                          <div className="text-2xl">Sign Up</div>
+                          <div className="text-2xl">{t("sign_up.sign_up")}</div>
                         </button>
                       </div>
                     </>
