@@ -1,28 +1,29 @@
+import { useTranslation } from "next-i18next";
+
 const cards = [
   {
     id: 1,
     iconURL: "/images/competitive_advantage/hand.svg",
-    content:
-      "Transparent and Effortless Investment Process At Selective Capital, our fully digital investment process ensures that investing has never been easier",
+    content: "comp_advan.point1",
     backgroundColor: "#E1E4E8",
   },
   {
     id: 2,
     iconURL: "/images/competitive_advantage/checkMark.svg",
-    content:
-      "Flexible Exit Strategies While we advise our investors with a holding period that maximize their returns, we also offer the option to sell shares to  their investors on our platform, giving you the flexibility and control you need to achieve your financial goals.",
+    content: "comp_advan.point2",
     backgroundColor: "#FFECC7",
   },
   {
     id: 3,
     iconURL: "/images/competitive_advantage/chart.svg",
-    content:
-      "Professional Risk Management Our team of experienced professionals carefully evaluates each investment opportunity to deliver optimal returns with calculated risk. So, you can be sure that your investments are in safe hands with us.",
+    content: "comp_advan.point3",
     backgroundColor: "#E1E4E8",
   },
 ];
 
 export default function CompetitiveAdvantageSection() {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
@@ -40,18 +41,19 @@ export default function CompetitiveAdvantageSection() {
             className=" absolute w-14 left-0 top-14"
           />
           <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl ">
-            Competitive Advantage
+            {t("comp_advan.title")}
           </h2>
           <p className="mt-4 text-2xl  leading-8 text-black">
-            Why invest with us!
+            {t("comp_advan.subtitle")}
           </p>
           <p className="mt-0 text-2xl  leading-8 text-black">
-            Reasons to trust Selective Capital
+            {t("comp_advan.subtitle2")}
           </p>
         </div>
         <div className="mx-auto mt-28 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {cards.map((card) => (
             <AdvantageCard
+              t={t}
               data={card}
               key={card.id}
               topMargin={card.id % 2 == 0 ? "50px" : ""}
@@ -63,7 +65,15 @@ export default function CompetitiveAdvantageSection() {
   );
 }
 
-function AdvantageCard({ data, topMargin }: { data: any; topMargin: string }) {
+function AdvantageCard({
+  data,
+  topMargin,
+  t,
+}: {
+  data: any;
+  topMargin: string;
+  t: any;
+}) {
   const rounded = "30px";
 
   return (
@@ -88,7 +98,7 @@ function AdvantageCard({ data, topMargin }: { data: any; topMargin: string }) {
       </div>
       <div className="w-full mt-4 px-9 pb-7">
         <p className="mt-1 line-clamp-3 text-md text-primary flex flex-col items-start  text-primary text-center">
-          {data.content}
+          {t(data.content)}
         </p>
       </div>
     </article>

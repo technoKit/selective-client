@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { Project } from "@/types";
+import { useTranslation } from "next-i18next";
 
 function HouseCard({ data }: { data: Project }) {
   let project = data.attributes;
+  const { t } = useTranslation();
 
   const purchasedPercentage =
     ((project.sold_shares / project.shares) * 100 < 100
@@ -50,7 +52,7 @@ function HouseCard({ data }: { data: Project }) {
               {project?.gross_yield ?? "-"}
             </div>
             <div className="text-start text-sm text-slate-500 mt-1 w-[80%]">
-              {`Gross Yield`}
+              {t("project.gross_yield")}
             </div>
           </div>
           <div className="w-[25%]">
@@ -58,7 +60,7 @@ function HouseCard({ data }: { data: Project }) {
               {project?.expected_return ?? "-"}
             </div>
             <div className="w-[80%] text-start text-sm text-slate-500 mt-1">
-              Expected Return
+              {t("project.expected_return")}
             </div>
           </div>
           <div className="w-[25%]">
@@ -66,7 +68,7 @@ function HouseCard({ data }: { data: Project }) {
               {project?.dividend_yield ?? "-"}
             </div>
             <div className="text-start text-sm text-slate-500 mt-1 w-[80%]">
-              Dividend Yield
+              {t("project.dividend_yield")}
             </div>
           </div>
           <div className="w-[25%]">
@@ -74,7 +76,7 @@ function HouseCard({ data }: { data: Project }) {
               {project?.rental_income ?? "-"}
             </div>
             <div className="w-[80%] text-start text-sm text-slate-500 mt-1">
-              Rental Income
+              {t("project.rental_income")}
             </div>
           </div>
         </div>
@@ -82,7 +84,7 @@ function HouseCard({ data }: { data: Project }) {
         <div>
           <div className="mt-4 group relative flex flex-row justify-between items-center w-full">
             <h4 className="text-lg font-medium leading-6 text-black">
-              Total shares
+              {t("project.total")}
             </h4>
             <h4 className="text-lg font-medium leading-6 text-primary">
               {project.shares}
@@ -101,14 +103,16 @@ function HouseCard({ data }: { data: Project }) {
         </div>
         <div className="mt-6 flex flex-row justify-between items-center w-full">
           <div>
-            <h4 className="text-lg font-medium text-black">Share price</h4>
+            <h4 className="text-lg font-medium text-black">
+              {t("project.price")}
+            </h4>
             <h4 className="text-lg font-light text-primary">
               {project.share_price} $
             </h4>
           </div>
           <Link href={`projects/${data.id}`}>
             <button className="bg-primary border-2 px-[20px] py-[0px] h-11 rounded-[40px] hover:bg-primary-light hover:border-primary-dark transition-colors duration-500 text-white font-bold shadow-xl">
-              Invest
+              {t("project.cta")}
             </button>
           </Link>
         </div>

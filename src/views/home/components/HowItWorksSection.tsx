@@ -1,23 +1,31 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 export default function HowItWorks() {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-slate-100">
       <section className="max-w-4xl mx-auto py-10 overflow-hidden ">
         <div className="mx-auto max-w-2xl text-center mb-28 mt-20">
           <h2 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
-            How It works
+            {t("how_works.title")}
           </h2>
           <p className="mt-2 text-2xl leading-8 text-gray-600">
-            Steps to gain income with selective capital
+            {t("how_works.subtitle")}
           </p>
         </div>
         <div>
           <div className="flex flex-row">
             <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded  ltr:mr-4 rtl:ml-4  uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-gray-500">Step 1</div>
-                <div className="text-gray-500 text-sm">Register</div>
+                <div className="text-3xl font-black text-gray-500">
+                  {t("how_works.step1")}
+                </div>
+                <div className="text-gray-500 text-sm">
+                  {" "}
+                  {t("how_works.step1_title")}
+                </div>
               </div>
               <div className="h-full  ltr:border-l-4 rtl:border-r-4 border-transparent">
                 <div className=" ltr:border-l-4 rtl:border-r-4  ltr:mr-4 rtl:ml-4  h-full border-gray-300 border-dashed"></div>
@@ -27,21 +35,18 @@ export default function HowItWorks() {
               initial={{ x: "25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
-              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8 "
+              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8 max-w-[90vw] m-auto "
             >
               <div className="flex md:flex-row flex-col items-center">
                 <div className="flex-auto">
                   <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
-                    <span className="font-black">Step 1</span> - Idea
+                    <span className="font-black"> {t("how_works.step1")}</span>{" "}
+                    -{t("how_works.step1_title")}
                   </div>
                   <div className="p-3 text-3xl text-gray-800 font">
-                    Register
+                    {t("how_works.step1_title")}
                   </div>
-                  <div className="px-3 pb-6">
-                    Sign up for a Selective Capital account to get access to
-                    exclusive investment opportunities in the real estate sector
-                    across different countries.
-                  </div>
+                  <div className="px-3 pb-6">{t("how_works.step1_text")}</div>
                 </div>
                 <div className="md:w-96 w-full p-5">
                   <img
@@ -65,8 +70,12 @@ export default function HowItWorks() {
           <div className="flex flex-row-reverse">
             <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded ltr:ml-4 rtl:mr-4 uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-gray-500">Step 2</div>
-                <div className="text-gray-500 text-sm">Select</div>
+                <div className="text-3xl font-black text-gray-500">
+                  {t("how_works.step2")}
+                </div>
+                <div className="text-gray-500 text-sm">
+                  {t("how_works.step2_title")}
+                </div>
               </div>
               <div className="h-full ltr:border-r-4 rtl:border-l-4 border-transparent">
                 <div className=" ltr:border-l-4 rtl:border-r-4 ltr:ml-4 rtl:mr-4 h-full border-gray-300 border-dashed"></div>
@@ -76,19 +85,18 @@ export default function HowItWorks() {
               initial={{ x: "-25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
-              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"
+              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8 max-w-[90vw] m-auto"
             >
               <div className="flex md:flex-row flex-col items-center">
                 <div className="flex-auto">
                   <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
-                    <span className="font-black">Step 2</span> - Select
+                    <span className="font-black">{t("how_works.step2")}</span> -
+                    {t("how_works.step2_title")}
                   </div>
-                  <div className="p-3 text-3xl text-gray-800 font">Select</div>
-                  <div className="px-3 pb-6">
-                    Browse and evaluate the available investment options in our
-                    platform, which are managed and evaluated by our team of
-                    experienced professionals to ensure maximum returns
+                  <div className="p-3 text-3xl text-gray-800 font">
+                    {t("how_works.step2_title")}
                   </div>
+                  <div className="px-3 pb-6">{t("how_works.step2_text")}</div>
                 </div>
                 <div className="md:w-96 w-full p-5">
                   <img
@@ -112,8 +120,12 @@ export default function HowItWorks() {
           <div className="flex flex-row">
             <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded  ltr:mr-4 rtl:ml-4  uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-gray-500">Step 3</div>
-                <div className="text-gray-500 text-sm">Invest</div>
+                <div className="text-3xl font-black text-gray-500">
+                  {t("how_works.step3")}
+                </div>
+                <div className="text-gray-500 text-sm">
+                  {t("how_works.step3_title")}
+                </div>
               </div>
               <div className="h-full  ltr:border-l-4 rtl:border-r-4 border-transparent">
                 <div className=" ltr:border-l-4 rtl:border-r-4  ltr:mr-4 rtl:ml-4  h-full border-gray-300 border-dashed"></div>
@@ -123,20 +135,18 @@ export default function HowItWorks() {
               initial={{ x: "25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
-              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"
+              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8 max-w-[90vw] m-auto"
             >
               <div className="flex md:flex-row flex-col items-center">
                 <div className="flex-auto">
                   <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
-                    <span className="font-black">Step 3</span> - Invest
+                    <span className="font-black">{t("how_works.step3")}</span> -
+                    {t("how_works.step3_title")}
                   </div>
-                  <div className="p-3 text-3xl text-gray-800 font">Invest</div>
-                  <div className="px-3 pb-6">
-                    Once you have found an investment opportunity that fits your
-                    goals and risk tolerance, you can easily invest through our
-                    fully digital process, which is designed to be hassle-free,
-                    transparent, and efficient.
+                  <div className="p-3 text-3xl text-gray-800 font">
+                    {t("how_works.step3_title")}
                   </div>
+                  <div className="px-3 pb-6">{t("how_works.step3_text")}</div>
                 </div>
                 <div className="md:w-96 w-full p-5">
                   <img
@@ -160,8 +170,12 @@ export default function HowItWorks() {
           <div className="flex flex-row-reverse">
             <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded ltr:ml-4 rtl:mr-4 uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-gray-500">Step 4</div>
-                <div className="text-gray-500 text-sm">Monitor</div>
+                <div className="text-3xl font-black text-gray-500">
+                  {t("how_works.step4")}
+                </div>
+                <div className="text-gray-500 text-sm">
+                  {t("how_works.step4_title")}
+                </div>
               </div>
               <div className="h-full ltr:border-r-4 rtl:border-l-4 border-transparent">
                 <div className=" ltr:border-l-4 rtl:border-r-4 ltr:ml-4 rtl:mr-4 h-full border-gray-300 border-dashed"></div>
@@ -171,21 +185,18 @@ export default function HowItWorks() {
               initial={{ x: "-25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
-              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"
+              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8 max-w-[90vw] m-auto"
             >
               <div className="flex md:flex-row flex-col items-center">
                 <div className="flex-auto">
                   <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
-                    <span className="font-black">Step 2</span> - Monitor
+                    <span className="font-black">{t("how_works.step4")}</span> -
+                    {t("how_works.step4_title")}
                   </div>
                   <div className="p-3 text-3xl text-gray-800 font">
-                    Monitor{" "}
+                    {t("how_works.step4_title")}
                   </div>
-                  <div className="px-3 pb-6">
-                    {`Track the performance of your investments in real-time through
-                      our platform's monitoring tools and regular updates from our
-                      team`}
-                  </div>
+                  <div className="px-3 pb-6">{t("how_works.step4_text")}</div>
                 </div>
                 <div className="md:w-96 w-full p-5">
                   <img
@@ -209,8 +220,12 @@ export default function HowItWorks() {
           <div className="flex flex-row">
             <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded  ltr:mr-4 rtl:ml-4  uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-gray-500">Step 5</div>
-                <div className="text-gray-500 text-sm">Exit</div>
+                <div className="text-3xl font-black text-gray-500">
+                  {t("how_works.step5")}
+                </div>
+                <div className="text-gray-500 text-sm">
+                  {t("how_works.step5_title")}
+                </div>
               </div>
               <div className="h-full  ltr:border-l-4 rtl:border-r-4 border-transparent">
                 <div className=" ltr:border-l-4 rtl:border-r-4  ltr:mr-4 rtl:ml-4  h-full border-gray-300 border-dashed"></div>
@@ -220,19 +235,18 @@ export default function HowItWorks() {
               initial={{ x: "25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
-              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"
+              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8 max-w-[90vw] m-auto"
             >
               <div className="flex md:flex-row flex-col items-center">
                 <div className="flex-auto">
                   <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
-                    <span className="font-black">Step 3</span> - Exit
+                    <span className="font-black">{t("how_works.step5")}</span> -
+                    {t("how_works.step5_title")}
                   </div>
-                  <div className="p-3 text-3xl text-gray-800 font">Exit</div>
-                  <div className="px-3 pb-6">
-                    Whether you choose to hold your investment for the
-                    recommended period or sell it to another investor on our
-                    platform, the process is quick and hassle-free.
+                  <div className="p-3 text-3xl text-gray-800 font">
+                    {t("how_works.step5_title")}
                   </div>
+                  <div className="px-3 pb-6">{t("how_works.step5_text")}</div>
                 </div>
                 <div className="md:w-96 w-full p-5">
                   <img
@@ -256,29 +270,30 @@ export default function HowItWorks() {
           <div className="flex flex-row-reverse">
             <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded ltr:ml-4 rtl:mr-4 uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-gray-500">Step 6</div>
-                <div className="text-gray-500 text-sm">Reinvest</div>
+                <div className="text-3xl font-black text-gray-500">
+                  {t("how_works.step6")}
+                </div>
+                <div className="text-gray-500 text-sm">
+                  {t("how_works.step6_title")}
+                </div>
               </div>
             </div>
             <motion.div
               initial={{ x: "-25vw" }}
               whileInView={{ x: 0 }}
               transition={{ duration: 1 }}
-              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8"
+              className="flex-auto border rounded  border-gray-300  shadow-lg bg-white p-8 max-w-[90vw] m-auto "
             >
               <div className="flex md:flex-row flex-col items-center">
                 <div className="flex-auto">
                   <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
-                    <span className="font-black">Step 6</span> - Reinvest
+                    <span className="font-black">{t("how_works.step6")}</span> -
+                    {t("how_works.step6_title")}
                   </div>
                   <div className="p-3 text-3xl text-gray-800 font">
-                    Reinvest
+                    {t("how_works.step6_title")}
                   </div>
-                  <div className="px-3 pb-6">
-                    Once you have exited an investment, you can reinvest your
-                    funds in new opportunities, or simply withdraw them to your
-                    account.
-                  </div>
+                  <div className="px-3 pb-6">{t("how_works.step6_text")}</div>
                 </div>
                 <div className="md:w-96 w-full p-5">
                   <img
