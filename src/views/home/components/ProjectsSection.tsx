@@ -50,7 +50,7 @@ export default function ProjectsSection({
   const { t } = useTranslation();
 
   return (
-    <div className="bg-slate-100 py-24 pb-20 sm:py-32 sm:pb-10 overflow-x-hidden">
+    <div className="bg-slate-100 pt-24 sm:py-32 sm:pb-10 overflow-x-hidden md:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
         <div className="text-center flex flex-col items-center">
           <img
@@ -65,12 +65,6 @@ export default function ProjectsSection({
             {t("project.subtitle")}
           </p>
         </div>
-
-        <img
-          src="/images/projects/temple.svg"
-          alt="location icon"
-          className="absolute top-24 left-[-25px] w-20 ml-1 mr-2"
-        />
 
         <img
           src="/images/projects/waves.svg"
