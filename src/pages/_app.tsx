@@ -47,10 +47,11 @@ function App({ Component, pageProps }: AppProps) {
   }, [router.locale]);
 
   return (
-    <main className={`${inter.variable} font-sans overflow-hidden`}>
+    <main className={`${inter.variable} font-sans `}>
       <AuthProvider>
         <Layout>
           <Component
+            className={"overflow-hidden"}
             {...pageProps}
             loadingProjects={loadingProjects}
             projects={projects}

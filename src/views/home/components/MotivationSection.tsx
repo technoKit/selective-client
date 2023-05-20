@@ -31,12 +31,12 @@ export default function HeroSection() {
             <div className="flex mt-6">
               <div>
                 <img
-                  className="block w-[20px] z-10"
+                  className="block w-[20px] min-w-[20px] z-10"
                   src="/images/motivation/Group 6.svg"
                   alt="Your Company"
                 />
               </div>
-              <div className="text-lg leading-8 text-gray-600  ml-3">
+              <div className="text-lg leading-8 text-gray-600  ltr:ml-3 rtl:mr-3">
                 {t("motivation.point1")}
               </div>
             </div>
@@ -44,25 +44,25 @@ export default function HeroSection() {
             <div className="flex mt-4">
               <div>
                 <img
-                  className="block w-[20px] z-10"
+                  className="block w-[20px] min-w-[20px] z-10"
                   src="/images/motivation/Group 6.svg"
                   alt="Your Company"
                 />
               </div>
-              <div className="text-lg leading-8 text-gray-600  ml-3">
+              <div className="text-lg leading-8 text-gray-600  ltr:ml-3 rtl:mr-3">
                 {t("motivation.point2")}
               </div>
             </div>
 
             <div className="mt-10 flex items-center gap-x-6 justify-end">
-              <div className="relative right-[-55px]">
+              <div className="relative ltr:right-[-55px] rtl:left-[-40px]">
                 <img
                   className="block w-[60px] z-10"
                   src="/images/motivation/image 14.svg"
                   alt="Your Company"
                 />
               </div>
-              <div className="h-18 p-1 w-52 shadow-xl rounded-full flex flex-col items-center border-2 border-slate-200 text-sm">
+              <div className="h-18 p-1 ltr:w-52 rtl:w-60 shadow-xl rounded-full flex flex-col items-center border-2 border-slate-200 text-sm">
                 <div> {t("motivation.name")}</div>
                 <div> {t("motivation.position")}</div>
               </div>

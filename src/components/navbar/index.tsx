@@ -65,7 +65,7 @@ export default function Navbar() {
             }
           )}
         >
-          {item.name}
+          {t(item.name)}
         </Disclosure.Button>
       );
     });

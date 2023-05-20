@@ -2,8 +2,11 @@ import Link from "next/link";
 import { PhoneIcon } from "@heroicons/react/24/outline";
 import { AtSymbolIcon } from "@heroicons/react/24/outline";
 import Form from "./components/Form";
+import { useTranslation } from "next-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <div>
       <div className="w-full min-h-[200px] bg-[url('/images/footer/Vector.png')] bg-slate-100"></div>
@@ -22,7 +25,7 @@ export default function Footer() {
                 href={"/"}
                 className="text-white hover:text-secondary  text-lg mt-5"
               >
-                Home
+                {t("footer.home")}
               </Link>
             </div>
             <div className="mt-2">
@@ -30,7 +33,7 @@ export default function Footer() {
                 href={"/projects"}
                 className="text-white hover:text-secondary  text-lg mt-10"
               >
-                Projects
+                {t("footer.projects")}
               </Link>
             </div>
             <div className="mt-2">
@@ -38,7 +41,7 @@ export default function Footer() {
                 href={"/contact-us"}
                 className="text-white hover:text-secondary  text-lg mt-10"
               >
-                Contact us
+                {t("footer.contact")}
               </Link>
             </div>
           </div>
@@ -48,7 +51,7 @@ export default function Footer() {
                 href={"#"}
                 className="text-white hover:text-secondary  text-lg mt-5"
               >
-                Privacy policy
+                {t("footer.privacy")}
               </Link>
             </div>
             <div className="mt-2">
@@ -56,7 +59,7 @@ export default function Footer() {
                 href={"#"}
                 className="text-white hover:text-secondary  text-lg mt-10"
               >
-                Conditions
+                {t("footer.conditions")}
               </Link>
             </div>
             <div className="mt-2">
@@ -64,7 +67,7 @@ export default function Footer() {
                 href={"#"}
                 className="text-white hover:text-secondary  text-lg mt-10"
               >
-                Company
+                {t("footer.company")}
               </Link>
             </div>
             <div className="mt-2">
@@ -72,7 +75,7 @@ export default function Footer() {
                 href={"#"}
                 className="text-white hover:text-secondary  text-lg mt-10"
               >
-                FAQ
+                {t("footer.faq")}
               </Link>
             </div>
             <div className="mt-2">
@@ -80,7 +83,7 @@ export default function Footer() {
                 href={"/"}
                 className="text-white hover:text-secondary  text-lg mt-10"
               >
-                Contact us
+                {t("footer.contact")}
               </Link>
             </div>
           </div>
@@ -89,17 +92,17 @@ export default function Footer() {
               <div className="rounded-full border-solid border-2 border-secondary p-2 ">
                 <PhoneIcon className="text-white w-[15px] h-[15px]" />
               </div>
-              <div className="text-white mt-2 ml-5">+201146466964</div>
+              <div className="text-white mt-2 ml-5 rtl:mr-5">+201146466964</div>
             </div>
             <div className="flex mt-4">
               <div className="rounded-full border-solid border-2 border-secondary p-2 ">
                 <AtSymbolIcon className="text-white w-[15px] h-[15px]" />
               </div>
-              <div className="text-white mt-2 ml-5">
+              <div className="text-white mt-2 ml-5 rtl:mr-5">
                 webmaster@selective.capital
               </div>
             </div>
-            <div className="flex mt-10 w-full">
+            <div className="flex mt-10 w-full justify-center pb-20 md:justify-start">
               <Form />
             </div>
           </div>
