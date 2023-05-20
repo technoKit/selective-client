@@ -35,11 +35,7 @@ export default function CompetitiveAdvantageSection() {
               className=" w-14 mr-[-6px] mb-[-25px]"
             />
           </div>
-          <img
-            src="/images/competitive_advantage/templeGate.svg"
-            alt="location icon"
-            className=" absolute w-14 left-0 top-14"
-          />
+
           <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl ">
             {t("comp_advan.title")}
           </h2>

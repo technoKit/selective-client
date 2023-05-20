@@ -1,5 +1,6 @@
 import HouseCard from "../../../components/HouseCard";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 //types imports
 import { Project } from "@/types";
@@ -80,6 +81,7 @@ export default function MainSection({
 }: {
   projects: Project[] | null;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="bg-slate-100 py-24 sm:py-32 sm:pb-10 overflow-x-hidden md:pb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
@@ -90,10 +92,10 @@ export default function MainSection({
             className=" w-20 ml-1 mr-2 mb-[-14px] mt-[-45px]"
           />
           <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl ">
-            Projects
+            {t("project.title")}
           </h2>
           <p className="mt-3 text-2xl leading-8 text-black">
-            Explore our projects
+            {t("project.subtitle")}
           </p>
         </div>
 

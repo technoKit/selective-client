@@ -8,6 +8,8 @@ import { useAuth } from "@/contexts/auth";
 import BuySharesForm from "./components/BuySharesForm";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import dynamic from "next/dynamic";
+import { useTranslation } from "next-i18next";
+
 // import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 // import ClassicEditor from "@/utils/ckeditor5-37.1.0-customBuild-ghannam/build_/ckeditor"; //this is a custom build for ckeditor5 with the alignment plugin included created by the online tool  https://ckeditor.com/ckeditor-5/online-builder/
 
@@ -26,6 +28,7 @@ export default function SingleProjectsView({
 }) {
   const router = useRouter();
   const { id } = router.query;
+  const { t } = useTranslation();
 
   const [project, setProject] = useState<Project | null>(null);
   useEffect(() => {
@@ -73,7 +76,7 @@ export default function SingleProjectsView({
         >
           <div className="flex ">
             <Link href="/projects" className="text-primary text-xl">
-              Projects
+              {t("project.title")}
             </Link>
             <ChevronRightIcon className="w-7 text-secondary" />
             <div className="text-black text-xl">
@@ -114,7 +117,7 @@ export default function SingleProjectsView({
                     <div className="mt-4 group relative flex flex-row justify-between items-center w-full">
                       <div className="mt-3  w-[50%]">
                         <h4 className="text-lg font-medium leading-6 text-black">
-                          Total shares
+                          {t("project.total")}
                         </h4>
                         <h4 className="text-lg font-medium leading-6 text-primary">
                           {project?.attributes.shares}
@@ -122,7 +125,7 @@ export default function SingleProjectsView({
                       </div>
                       <div className="mt-3  w-[50%]">
                         <h4 className="text-lg font-medium leading-6 text-black text-end">
-                          Remaining Shares
+                          {t("project.remaining")}
                         </h4>
                         <h4 className="text-lg font-medium leading-6 text-primary text-end">
                           {project?.attributes.shares -
@@ -155,7 +158,7 @@ export default function SingleProjectsView({
                   <div className="mt-6 flex flex-row justify-between items-center w-full">
                     <div>
                       <h4 className="text-lg font-medium text-black">
-                        Share price
+                        {t("project.price")}
                       </h4>
                       <h4 className="text-lg font-light text-primary">
                         {project.attributes.share_price} $
@@ -171,7 +174,7 @@ export default function SingleProjectsView({
                       activeClass="active"
                     >
                       <button className="bg-secondary border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500 mt-10 relative">
-                        Apply for your shares now
+                        {t("project.apply_cta")}
                         <span className="absolute flex h-3 w-3 right-0 top-0">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-light opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-3 w-3  bg-primary"></span>
@@ -195,15 +198,14 @@ export default function SingleProjectsView({
             {project && !isAuthenticated && (
               <div className="mt-8 bg-primary p-8 rounded-2xl shadow-xl mb-16">
                 <div className="text-secondary font-bold text-2xl">
-                  Sign up to be able to buy shares
+                  {t("project.logged_out_title")}
                 </div>
                 <div className="text-white text-xl mt-2">
-                  By logging in you will join our waiting list for active users.
-                  We will notify you once you can buy shares.
+                  {t("project.logged_out_text")}
                 </div>
                 <div className="flex justify-end">
                   <button className="bg-secondary border-2 text-primary px-[32px] py-[0px] h-11 rounded-[40px] hover:bg-secondary-light hover:border-secondary-dark transition-colors duration-500 mt-5 ">
-                    <Link href={`/sign-up`}>Sign Up</Link>
+                    <Link href={`/sign-up`}> {t("project.sign-up")}</Link>
                   </button>
                 </div>
               </div>

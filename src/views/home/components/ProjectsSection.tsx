@@ -1,5 +1,6 @@
 import HouseCard from "../../../components/HouseCard";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 import { Project } from "@/types";
 
@@ -46,6 +47,8 @@ export default function ProjectsSection({
 }: {
   projects: Project[] | null;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-slate-100 py-24 pb-20 sm:py-32 sm:pb-10 overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
@@ -56,10 +59,10 @@ export default function ProjectsSection({
             className=" w-20 ml-1 mr-2 mb-[-14px] mt-[-45px]"
           />
           <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl ">
-            Latest Projects
+            {t("project.title")}
           </h2>
           <p className="mt-3 text-2xl leading-8 text-black">
-            Explore our projects
+            {t("project.subtitle")}
           </p>
         </div>
 
@@ -83,7 +86,7 @@ export default function ProjectsSection({
             ))}
         </div>
         <button className="bg-primary border-2 border-primary text-white mt-10 px-[32px] py-[13px] rounded-[40px] hover:bg-primary-light transition-colors duration-500">
-          <Link href="/projects">Explore All Projects</Link>
+          <Link href="/projects"> {t("project.explore_cta")}</Link>
         </button>
       </div>
     </div>

@@ -28,13 +28,18 @@
     "title": "Projects",
     "subtitle": "Explore our projects",
     "total": "Total Shares",
+    "remaining": "Remaining Shares",
     "price": "Share Price",
     "cta": "Invest",
     "gross_yield": "Gross Yield",
     "expected_return": "Expected Return",
     "dividend_yield": "Dividend Yield",
     "rental_income": "Rental Income",
-    "explore_cta": "Explore All Projects"
+    "explore_cta": "Explore All Projects",
+    "apply_cta": "Apply for your shares now",
+    "sign-up": "Sign up",
+    "logged_out_title": "Sign up to be able to buy shares",
+    "logged_out_text": "By logging in you will join our waiting list for active users. We will notify you once you can buy shares."
   },
   "comp_advan": {
     "title": "Competitive Advantage",
@@ -83,7 +88,9 @@
     "title": "Contact Us",
     "subtitle": "Ready to get more information",
     "form_title": "Send us a message",
-    "address": "5075 Main Road, D- Block,2nd Floor, New York",
+    "address": "5075 Main Road, D- Block,",
+    "address2": "2nd Floor, New York",
+
     "form_subtitle": "We will get back to you soon",
     "name": "Name",
     "email": "Email",

@@ -1,27 +1,31 @@
-const cards = [
-  {
-    id: 1,
-    iconURL: "/images/contact_us/location.svg",
-    firstContent: "5075 Main Road, D- Block,",
-    secondContent: "2nd Floor, New York",
-    backgroundColor: "#E1E4E8",
-  },
-  {
-    id: 2,
-    iconURL: "/images/contact_us/phone.svg",
-    firstContent: "+012 (345) 689 37",
-    backgroundColor: "#E1E4E8",
-  },
-  {
-    id: 3,
-    iconURL: "/images/contact_us/mail.svg",
-    firstContent: "supportinfo@gmail.com",
-    secondContent: "www.funden.com",
-    backgroundColor: "#E1E4E8",
-  },
-];
+import { useTranslation } from "next-i18next";
 
 export default function InformationSection() {
+  const { t } = useTranslation();
+
+  const cards = [
+    {
+      id: 1,
+      iconURL: "/images/contact_us/location.svg",
+      firstContent: t("contact_us.address"),
+      secondContent: t("contact_us.address2"),
+      backgroundColor: "#E1E4E8",
+    },
+    {
+      id: 2,
+      iconURL: "/images/contact_us/phone.svg",
+      firstContent: "+012 (345) 689 37",
+      backgroundColor: "#E1E4E8",
+    },
+    {
+      id: 3,
+      iconURL: "/images/contact_us/mail.svg",
+      firstContent: "supportinfo@gmail.com",
+      secondContent: "www.funden.com",
+      backgroundColor: "#E1E4E8",
+    },
+  ];
+
   return (
     <div className="bg-slate-100 py-24 sm:py-32 md:pb-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex flex-col justify-center items-center">
@@ -39,10 +43,10 @@ export default function InformationSection() {
             className=" absolute w-14 left-0 top-14"
           />
           <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary sm:text-4xl ">
-            Contact Us
+            {t("contact_us.title")}
           </h2>
           <p className="mt-4 text-2xl leading-8 text-black">
-            Ready to get more information
+            {t("contact_us.subtitle")}
           </p>
         </div>
         <div className="mx-auto mt-14 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">

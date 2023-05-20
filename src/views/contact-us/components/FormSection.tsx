@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import api from "@/utils/api";
+import { useTranslation } from "next-i18next";
 
 type MessageValues = {
   name: string;
@@ -11,6 +12,8 @@ type MessageValues = {
 };
 
 export default function FormSection() {
+  const { t } = useTranslation();
+
   const [success, setSuccess] = useState<boolean | null>(null);
   const [failure, setFailure] = useState<boolean | null>(null);
 
@@ -47,10 +50,10 @@ export default function FormSection() {
   return (
     <div className="bg-slate-100 flex flex-col justify-center- items-center">
       <h3 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary sm:text-4xl ">
-        Send us a message
+        {t("contact_us.form_title")}
       </h3>
       <p className="mt-4 text-2xl leading-8 text-primary mb-10">
-        we will get back to you soon withing 48 hours
+        {t("contact_us.form_subtitle")}
       </p>
 
       <div
@@ -59,7 +62,7 @@ export default function FormSection() {
       >
         <div className="flex flex-row flex-wrap items-center justify-center mt-1 w-[100%]">
           <div className="shadow-sm mx-5 my-1 flex flex-col lg:w-[40%] sm:w-[100%]">
-            <label className="text-black mb-1">Your name</label>
+            <label className="text-black mb-1"> {t("contact_us.name")}</label>
             <input
               id="name"
               className="h-12 rounded-full border-0  pl-[30px] text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6"
@@ -68,7 +71,7 @@ export default function FormSection() {
           </div>
 
           <div className="shadow-sm mx-5 my-1 flex flex-col lg:w-[40%] sm:w-[100%]">
-            <label className="text-black mb-1">Phone Number</label>
+            <label className="text-black mb-1"> {t("contact_us.phone")}</label>
             <input
               id="phone"
               className="h-12 rounded-full border-0  pl-[30px] text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6"
@@ -79,7 +82,7 @@ export default function FormSection() {
 
         <div className="flex flex-row flex-wrap items-center justify-center mt-1 w-[100%]">
           <div className="shadow-sm mx-5 my-1 flex flex-col lg:w-[40%] sm:w-[100%]">
-            <label className="text-black mb-1">Email Address</label>
+            <label className="text-black mb-1"> {t("contact_us.email")}</label>
             <input
               id="email"
               className="h-12 rounded-full border-0  pl-[30px] text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6"
@@ -88,7 +91,10 @@ export default function FormSection() {
           </div>
 
           <div className="shadow-sm mx-5 my-1 flex flex-col lg:w-[40%] sm:w-[100%]">
-            <label className="text-black mb-1">Subject</label>
+            <label className="text-black mb-1">
+              {" "}
+              {t("contact_us.subject")}
+            </label>
             <input
               id="subject"
               className="h-12 rounded-full border-0  pl-[30px] text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6"
@@ -99,7 +105,10 @@ export default function FormSection() {
 
         <div className="flex flex-row flex-wrap items-center justify-center mt-1 w-[100%]">
           <div className="shadow-sm m-5 flex flex-col lg:w-[85%] sm:w-[100%]">
-            <label className="text-black mb-1">Write Message</label>
+            <label className="text-black mb-1">
+              {" "}
+              {t("contact_us.message")}
+            </label>
             <input
               id="message"
               className="h-40 rounded-3xl border-0  pl-[30px] text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6"
@@ -114,7 +123,7 @@ export default function FormSection() {
               onClick={handleSubmit(onSubmit)}
               className="h-14 w-full rounded-full border-0 text-white ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary hover:bg-primary-light sm:text-sm sm:leading-6 bg-primary "
             >
-              <div className="text-xl">Send Message</div>
+              <div className="text-xl"> {t("contact_us.send")}</div>
             </button>
           )}
           {success && (
