@@ -9,5 +9,6 @@ module.exports = {
     defaultLocale: "en",
     keySeparator: ".",
     fallbackLng: "en",
+    localePath: path.resolve("./public/locales"),
   },
 };

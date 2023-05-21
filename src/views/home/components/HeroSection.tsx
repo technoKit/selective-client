@@ -41,9 +41,9 @@ export default function HeroSection() {
   const { t } = useTranslation();
 
   return (
-    <div className="lg:mt-[-100px overflow-hidden">
-      <div className="relative isolate pt-5">
-        <div className="mx-auto max-w-7xl px-6 py-4 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:pt-40">
+    <div className="overflow-hidden">
+      <div className="relative isolate pt-0">
+        <div className="mx-auto max-w-7xl px-6 pb-4 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:pt-24">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
             <div className="hidden md:block">
               <AnimatedSequence />
