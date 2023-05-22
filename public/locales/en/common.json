@@ -39,7 +39,10 @@
     "apply_cta": "Apply for your shares now",
     "sign-up": "Sign up",
     "logged_out_title": "Sign up to be able to buy shares",
-    "logged_out_text": "By logging in you will join our waiting list for active users. We will notify you once you can buy shares."
+    "logged_out_text": "By logging in you will join our waiting list for active users. We will notify you once you can buy shares.",
+    "buy_form_title": "Apply for shares in this project",
+    "buy_form_subtitle": "To get shares in this project fill in the form and we will contact you shortly.",
+    "form_cta": "Send Request"
   },
   "comp_advan": {
     "title": "Competitive Advantage",

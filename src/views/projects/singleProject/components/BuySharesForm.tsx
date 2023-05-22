@@ -4,6 +4,7 @@ import { UserCircleIcon } from "@heroicons/react/20/solid";
 import { Bars4Icon } from "@heroicons/react/20/solid";
 import { PhoneIcon } from "@heroicons/react/20/solid";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "next-i18next";
 
 import api from "@/utils/api";
 
@@ -25,6 +26,7 @@ function BuySharesForm(props: { project: Project }) {
 
   const [success, setSuccess] = useState<boolean | null>(null);
   const [failure, setFailure] = useState<boolean | null>(null);
+  const { t } = useTranslation();
 
   const onSubmit = async (data: {
     email: string;
@@ -58,11 +60,10 @@ function BuySharesForm(props: { project: Project }) {
   return (
     <div className="bg-white shadow-2xl p-8 rounded-2xl">
       <div className="text-center text-4xl text-primary font-bold">
-        Apply for shares in this project
+        {t("project.buy_form_title")}
       </div>
       <div className="text-center text-xl text-slate-500 mt-2 mb-4">
-        To get shares in this project fill in the form and we will contact you
-        shortly
+        {t("project.buy_form_subtitle")}
       </div>
       <div id="form" className="grid grid-cols-2 gap-4">
         <div className="relative mt-1 rounded-3xl shadow-sm ">
@@ -127,7 +128,7 @@ function BuySharesForm(props: { project: Project }) {
                 onClick={handleSubmit(onSubmit)}
                 className="h-12 block rounded-full border-0 py-1.5  text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary hover:bg-primary-light sm:text-sm sm:leading-6 bg-primary w-full md:w-1/3 ml-auto"
               >
-                <div className="text-xl ">Send Request</div>
+                <div className="text-xl ">{t("project.form_cta")}</div>
               </button>
             )}
             {success && (

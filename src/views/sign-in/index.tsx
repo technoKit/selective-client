@@ -108,6 +108,11 @@ export default function SignInView() {
                     </button>
                   </div>
                 </div>
+                {loginError && (
+                  <div style={{ color: "red" }} className="mt-3 ml-4">
+                    {loginError}
+                  </div>
+                )}
               </div>
             </div>
           </div>
