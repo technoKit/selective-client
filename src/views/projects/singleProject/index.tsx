@@ -44,7 +44,6 @@ export default function SingleProjectsView({
   //gallery images states logic
   const [images, setImages] = useState<ReactImageGalleryItem[]>([]);
   const [fullScreen, setFullScreen] = useState<boolean>(false);
-  console.log("fullScreen :>> ", fullScreen);
 
   useEffect(() => {
     if (project) {
@@ -67,6 +66,10 @@ export default function SingleProjectsView({
   const rounded = "30px";
 
   const { login, loginError, loginLoading, user, isAuthenticated } = useAuth();
+
+  console.log("the translatedProject are: ", projects);
+
+  console.log("the project is: ", project);
 
   return (
     <main>

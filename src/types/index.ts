@@ -32,5 +32,6 @@ export type Project = {
     expected_return: string;
     dividend_yield: string;
     rental_income: string;
+    localizations?: { data: Project[] };
   };
 };

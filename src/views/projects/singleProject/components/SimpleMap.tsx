@@ -19,7 +19,6 @@ const Marker = () => (
 export default function SimpleMap(props: {
   location: { lat: number; lng: number };
 }) {
-  console.log("location :>> ", props.location);
   const defaultProps = {
     center: {
       lat: props?.location.lat,

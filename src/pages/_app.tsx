@@ -19,10 +19,13 @@ const inter = Inter({
 });
 
 function App({ Component, pageProps }: AppProps) {
-  const baseURL = `${process.env.NEXT_PUBLIC_BASE_URL}/projects?populate=*`;
+  const baseURL = `${process.env.NEXT_PUBLIC_BASE_URL}/projects?populate=deep`;
 
   const [projects, setProjects] = useState<Project[] | null>(null);
   const [loadingProjects, setLoadingProjects] = useState(true);
+  const [translatedProjects, setTranslatedProjects] = useState<
+    Project[] | null
+  >(null);
 
   useEffect(() => {
     setLoadingProjects(true);
@@ -30,6 +33,7 @@ function App({ Component, pageProps }: AppProps) {
       if (response.data?.data.length > 0) {
         setLoadingProjects(false);
         setProjects(response.data.data);
+        console.log(response.data.data);
       }
     });
   }, []);
@@ -46,6 +50,32 @@ function App({ Component, pageProps }: AppProps) {
     }
   }, [router.locale]);
 
+  //a useEffect to change the projects when the locale changes
+  useEffect(() => {
+    //set the translated projects to the projects fetched (in english)
+    let translatedProjects = projects;
+    // if locale is arabic and there are projects fetched change the translated projects to the arabic ones
+    if (router.locale === "ar" && projects?.length) {
+      translatedProjects = projects?.map((project) => {
+        if (project?.attributes?.localizations?.data?.length) {
+          let translatedProject = {
+            attributes: {
+              ...project?.attributes?.localizations?.data[0].attributes,
+              gallery: project.attributes.gallery, //populate gallery from the main project
+              main_image: project.attributes.main_image, //populate main_image from the main project
+            },
+            id: project.id, //set the id as the main project id
+          };
+          return translatedProject;
+        } else {
+          return project;
+        }
+      });
+    }
+    //set the translated projects state to the translated projects
+    setTranslatedProjects(translatedProjects);
+  }, [router.locale, projects]);
+
   return (
     <main className={`${inter.variable} font-sans `}>
       <AuthProvider>
@@ -54,7 +84,7 @@ function App({ Component, pageProps }: AppProps) {
             className={"overflow-hidden"}
             {...pageProps}
             loadingProjects={loadingProjects}
-            projects={projects}
+            projects={translatedProjects}
           />
         </Layout>
       </AuthProvider>
