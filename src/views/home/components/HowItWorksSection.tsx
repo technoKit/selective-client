@@ -202,7 +202,7 @@ export default function HowItWorks() {
                   <img
                     src="/images/how_it_works/monitor.png"
                     alt="step 2"
-                    className="object-scale-down h-40 ml-auto"
+                    className="object-scale-down h-32 ml-auto"
                   />
                 </div>
               </div>
@@ -299,7 +299,7 @@ export default function HowItWorks() {
                   <img
                     src="/images/how_it_works/reinvest.png"
                     alt="step 2"
-                    className="object-scale-down h-40 ml-auto"
+                    className="object-scale-down h-32 ml-auto"
                   />
                 </div>
               </div>

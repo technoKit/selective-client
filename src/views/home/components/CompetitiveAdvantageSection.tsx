@@ -4,18 +4,21 @@ const cards = [
   {
     id: 1,
     iconURL: "/images/competitive_advantage/hand.svg",
+    title: "comp_advan.point1_title",
     content: "comp_advan.point1",
     backgroundColor: "#E1E4E8",
   },
   {
     id: 2,
     iconURL: "/images/competitive_advantage/checkMark.svg",
+    title: "comp_advan.point2_title",
     content: "comp_advan.point2",
     backgroundColor: "#FFECC7",
   },
   {
     id: 3,
     iconURL: "/images/competitive_advantage/chart.svg",
+    title: "comp_advan.point3_title",
     content: "comp_advan.point3",
     backgroundColor: "#E1E4E8",
   },
@@ -93,6 +96,9 @@ function AdvantageCard({
         />
       </div>
       <div className="w-full mt-4 px-9 pb-7">
+        <h3 className="text-2xl font-bold text-primary text-center">
+          {t(data.title)}
+        </h3>
         <p className="mt-1 line-clamp-3 text-md text-primary flex flex-col items-start  text-primary text-center">
           {t(data.content)}
         </p>
