@@ -3,24 +3,24 @@ import { useTranslation } from "next-i18next";
 const cards = [
   {
     id: 1,
-    iconURL: "/images/competitive_advantage/hand.svg",
     title: "comp_advan.point1_title",
     content: "comp_advan.point1",
     backgroundColor: "#E1E4E8",
+    iconURL: "/images/competitive_advantage/chart.svg",
   },
   {
     id: 2,
-    iconURL: "/images/competitive_advantage/checkMark.svg",
     title: "comp_advan.point2_title",
     content: "comp_advan.point2",
     backgroundColor: "#FFECC7",
+    iconURL: "/images/competitive_advantage/hand.svg",
   },
   {
     id: 3,
-    iconURL: "/images/competitive_advantage/chart.svg",
     title: "comp_advan.point3_title",
     content: "comp_advan.point3",
     backgroundColor: "#E1E4E8",
+    iconURL: "/images/competitive_advantage/checkMark.svg",
   },
 ];
 
@@ -44,9 +44,6 @@ export default function CompetitiveAdvantageSection() {
           </h2>
           <p className="mt-4 text-2xl  leading-8 text-black">
             {t("comp_advan.subtitle")}
-          </p>
-          <p className="mt-0 text-2xl  leading-8 text-black">
-            {t("comp_advan.subtitle2")}
           </p>
         </div>
         <div className="mx-auto mt-28 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -88,11 +85,13 @@ function AdvantageCard({
         <img
           src={data.iconURL}
           alt="icon"
-          className="w-20"
-          style={{
-            borderTopLeftRadius: rounded,
-            borderTopRightRadius: rounded,
-          }}
+          className="w-16"
+          style={
+            {
+              // borderTopLeftRadius: rounded,
+              // borderTopRightRadius: rounded,
+            }
+          }
         />
       </div>
       <div className="w-full mt-4 px-9 pb-7">
